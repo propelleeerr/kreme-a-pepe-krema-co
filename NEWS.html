@@ -221,16 +221,6 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%
-      height: 100%
-      display: none;
-      background-color: rgba(0, 0, 0, 0.5); 
-      z-index: 1001;
-
     #noteImage {
     width: 800%; /* Adjust this value to make the image smaller or larger */
     max-width: 300px; /* Optional: set a maximum width */
@@ -329,7 +319,7 @@
   <h2 class="section-header" id="LatestNews">Latest News</h2>
 
   <div class="news-container">
-    <div class="overlay"> </div> <div class="news-item" onclick="openNote('Krema Co. Presentation', 'pictures/GROUP.jpg', 'A New Beginning! The Start of Kreme-a-Pepe', 'On September 12, 2024, Krema Co., led by a team of nine passionate student entrepreneurs, presented their innovative business venture. Their commitment to sustainability and creativity shone through, as they introduced a product that is both marketable and environmentally conscious. The dedication and fresh approach of the students to entrepreneurship made a strong and lasting impact on the audience.')">
+    <div class="news-item" onclick="openNote('Krema Co. Presentation', 'pictures/GROUP.jpg', 'A New Beginning! The Start of Kreme-a-Pepe', 'On September 12, 2024, Krema Co., led by a team of nine passionate student entrepreneurs, presented their innovative business venture. Their commitment to sustainability and creativity shone through, as they introduced a product that is both marketable and environmentally conscious. The dedication and fresh approach of the students to entrepreneurship made a strong and lasting impact on the audience.')">
       <img src="pictures/GROUP.jpg" alt="News 1" />
       <div class="news-title">Krema Co. Presentation</div>
       <div class="news-date">September 12, 2024</div>
@@ -372,14 +362,12 @@
   </div>
 
   <script>
-    function openNote(title, image, description, extraInfo, overlay) {
+    function openNote(title, image, description, extraInfo) {
       document.getElementById('noteTitle').innerText = title;
       document.getElementById('noteImage').src = image;
       document.getElementById('noteDescription').innerText = description;
       document.getElementById('extraInfo').innerText = extraInfo;
       document.getElementById('noteContainer').style.display = 'block';
-      document.querySelector('.overlay').style.display = 'block';
-      document.body.style.overflow = hidden;
     }
 
     function closeNote() {
