@@ -282,7 +282,14 @@
     }
 
     .close-button {
-      cursor: pointer;
+      background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    }
+
+    .no-scroll {
+      overflow: hidden;
     }
   </style>
 </head>
@@ -363,16 +370,22 @@
 
   <script>
     function openNote(title, image, description, extraInfo) {
-      document.getElementById('noteTitle').innerText = title;
-      document.getElementById('noteImage').src = image;
-      document.getElementById('noteDescription').innerText = description;
-      document.getElementById('extraInfo').innerText = extraInfo;
-      document.getElementById('noteContainer').style.display = 'block';
-    }
+    document.getElementById('noteTitle').innerText = title;
+    document.getElementById('noteImage').src = image;
+    document.getElementById('noteDescription').innerText = description;
+    document.getElementById('extraInfo').innerText = extraInfo || '';
+    document.getElementById('noteContainer').style.display = 'block';
 
-    function closeNote() {
-      document.getElementById('noteContainer').style.display = 'none';
-    }
+    document.getElementById('noteContainer').classList.add('open');
+    document.body.classList.add('no-scroll'); // Disable background scrolling
+}
+
+function closeNote() {
+  document.getElementById('noteContainer').style.display = 'none';
+    document.body.classList.remove('no-scroll'); // Re-enable background scrolling
+}
+
+
   </script>
 </body>
 </html>
