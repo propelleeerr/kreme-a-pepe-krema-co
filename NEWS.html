@@ -265,83 +265,59 @@
       overflow: hidden;
     }
     
-   @media (max-width: 768px) {
-    body {
-        padding: 15px; /* Increased padding for better spacing */
-        font-size: 16px; /* Slightly larger font for readability */
-    }
+  /* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust base font size */
+    padding: 10px; /* Add padding to avoid edge-to-edge content */
+  }
 
-    .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center items */
-        padding: 15px 0; /* More padding for spacing */
-    }
+  /* Adjusting the news article section */
+  .news-container {
+    padding: 10px; /* Space around the container */
+    max-width: 100%; /* Ensure it uses the full width */
+  }
 
-    .logo-container {
-        margin-bottom: 15px; /* Increased space below the logo */
-    }
+  .news-header {
+    font-size: 20px; /* Adjust header size */
+    text-align: center; /* Center align headers for a balanced look */
+    margin-bottom: 15px; /* Add space below the header */
+  }
 
-    .search-container {
-        width: 100%; /* Full width for the search bar */
-        margin-bottom: 15px; /* Space below the search bar */
-    }
+  .news-image {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below the image */
+  }
 
-    .search-container input[type="text"] {
-        width: 100%; /* Full width for better usability */
-        padding: 12px; /* Increased padding for input */
-        border-radius: 5px; /* Rounded corners for input */
-        font-size: 16px; /* Increased font size for better readability */
-    }
+  .news-content {
+    font-size: 14px; /* Smaller font size for better readability */
+    line-height: 1.6; /* Increase line height for readability */
+    margin-bottom: 20px; /* Space between articles */
+  }
 
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons */
-        margin-top: 15px; /* Space above the button container */
-    }
+  .news-author, .news-date {
+    font-size: 12px; /* Smaller size for metadata */
+    margin-bottom: 10px; /* Space below */
+    text-align: center; /* Center align for a unified look */
+  }
 
-    .button-container a {
-        margin-bottom: 15px; /* Increased space between buttons */
-        padding: 12px 20px; /* Increased padding for buttons */
-        border-radius: 5px; /* Rounded corners for buttons */
-        background-color: #f0f0f0; /* Button background color */
-        text-align: center; /* Center text in buttons */
-        width: 100%; /* Full width buttons */
-        font-size: 16px; /* Increased font size for buttons */
-    }
+  /* Adjusting the layout of the news list */
+  .news-list {
+    display: flex;
+    flex-direction: column; /* Stack articles vertically */
+    gap: 15px; /* Space between articles */
+  }
 
-    .news-item {
-        margin-bottom: 20px; /* Space between news items */
-        padding: 15px; /* Padding for news items */
-        border: 1px solid #ccc; /* Light border for separation */
-        border-radius: 5px; /* Rounded corners */
-        width: 100%; /* Full width for news items */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        background-color: #fff; /* White background for news items */
-    }
-
-    .news-title {
-        font-size: 24px; /* Increased title size */
-        margin-bottom: 10px; /* Space below title */
-    }
-
-    .news-description {
-        font-size: 16px; /* Description size */
-        line-height: 1.5; /* Better line height for readability */
-        margin-bottom: 10px; /* Space below description */
-    }
-
-    .news-date {
-        font-size: 14px; /* Smaller date size */
-        color: #666; /* Gray color for date */
-    }
-
-    h2 {
-        font-size: 26px; /* Increased heading size for better visibility */
-        text-align: center; /* Center headings */
-        margin-bottom: 10px; /* Increased space below headings */
-    }
+  /* Buttons and links */
+  .read-more-button {
+    width: 100%; /* Full width */
+    padding: 12px; /* Increase padding for easier touch interaction */
+    font-size: 14px; /* Adjust font size */
+    text-align: center; /* Center text */
+    border-radius: 5px; /* Smooth corners */
+  }
 }
-
 
   </style>
 </head>
