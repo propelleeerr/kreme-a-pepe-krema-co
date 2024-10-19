@@ -171,55 +171,7 @@
       text-align: center;
     }
 
-    @media (max-width: 768px) {
-  body {
-    padding: 10px; /* Reduce padding on mobile */
-  }
-
-  .logo-container {
-    flex-direction: column; /* Stack logo and text vertically */
-    align-items: center; /* Center logo and text */
-  }
-
-  .logo-text {
-    font-size: 24px; /* Adjust logo text size */
-  }
-
-  .search-container {
-    width: 100%; /* Full width on mobile */
-    margin-top: 10px; /* Add margin for spacing */
-  }
-
-  .search-container input[type="text"] {
-    width: 100%; /* Full width input on mobile */
-    font-size: 14px; /* Adjust font size */
-  }
-
-  .button-container {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-start; /* Align buttons to start */
-  }
-
-  .button-container a {
-    margin-bottom: 10px; /* Add space between buttons */
-  }
-
-  .news-container {
-    grid-template-columns: 1fr; /* Single column for news items */
-  }
-
-  .news-item {
-    padding: 10px; /* Less padding on news items */
-  }
-
-  .note-container {
-    width: 90%; /* Responsive width for notes */
-  }
-
-  .close-button {
-    font-size: 1.2em; /* Make close button easier to tap */
-  }
-}
+  
 
 
     .note-container {
@@ -312,6 +264,58 @@
     .no-scroll {
       overflow: hidden;
     }
+    
+    @media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Space below the logo */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start; /* Align buttons to the start */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .button-container a {
+        margin-bottom: 10px; /* Space between buttons */
+    }
+
+    .news-section {
+        flex-direction: column; /* Stack news articles vertically */
+        align-items: center; /* Center items */
+        margin: 0; /* Reset margins */
+    }
+
+    .news-item {
+        width: 100%; /* Full width for news items */
+        margin-bottom: 20px; /* Space between articles */
+        padding: 15px; /* Padding for news items */
+        text-align: center; /* Center text for better readability */
+        border: 1px solid #ddd; /* Optional border for emphasis */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    .news-image {
+        width: 100%; /* Full width for images */
+        max-width: 400px; /* Limit max width */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .news-title {
+        font-size: 1.5em; /* Adjust font size for titles */
+        margin-bottom: 10px; /* Space below title */
+    }
+
+    .news-description {
+        font-size: 1em; /* Adjust font size for descriptions */
+    }
+}
+
   </style>
 </head>
 <body>
