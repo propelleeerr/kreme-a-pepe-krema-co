@@ -1,25 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Acme&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+
   <style>
     body {
       background-color: rgb(236, 234, 231);
@@ -29,83 +17,76 @@
       padding: 20px;
     }
 
-    /* Header container for better layout control */
     .header {
       display: flex;
-      justify-content: space-between; /* Space between logo/text and search bar */
-      align-items: center; /* Center items vertically */
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
-      padding: 10px 0; /* Add padding for aesthetics */
+      padding: 10px 0;
     }
 
-    /* Logo and text container */
     .logo-container {
       display: flex;
-      align-items: center; /* Center items vertically */
+      align-items: center;
     }
 
-    /* Logo styling */
     .header .logo {
-      max-height: 90px; /* Adjust logo size */
-      margin-right: 10px; /* Space between logo and text */
+      max-height: 90px;
+      margin-right: 10px;
     }
 
-    /* Logo text styling */
     .logo-text {
-      font-size: 28px; /* Adjusted font size */
-      font-weight: bold; /* Bold text */
-      color: #605b4a; /* Text color */
-      font-family: 'Acme', sans-serif; /* Use Acme font */
-      letter-spacing: 1px; /* Add some spacing between letters */
-      text-transform: uppercase; /* Transform text to uppercase */
+      font-size: 28px;
+      font-weight: bold;
+      color: #605b4a;
+      font-family: 'Acme', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    /* Search bar styling */
     .search-container {
       display: flex;
       align-items: center;
     }
 
     .search-container input[type="text"] {
-      padding: 8px 12px; /* Increased padding for better spacing */
-      border: 1px solid #ccc; /* Light border */
-      border-radius: 20px; /* Rounded corners */
-      height: 40px; /* Increased height for a more substantial look */
-      width: 200px; /* Width of the search bar */
-      opacity: 1; /* Full opacity for better readability */
-      font-family: "Outfit", sans-serif; /* Use the same font family as the body */
-      font-size: 14px; /* Match the font size of the body */
-      transition: border-color 0.3s; /* Smooth transition for border color */
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      height: 40px;
+      width: 200px;
+      font-family: "Outfit", sans-serif;
+      font-size: 14px;
+      transition: border-color 0.3s;
     }
 
     .search-container input[type="text"]:focus {
-      border-color: #605b4a; /* Change border color on focus */
-      outline: none; /* Remove default outline */
+      border-color: #605b4a;
+      outline: none;
     }
 
     .search-container button {
-      background-color: transparent; /* Transparent background */
-      border: none; /* No border */
-      cursor: pointer; /* Pointer cursor on hover */
-      margin-left: 5px; /* Space between input and button */
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-left: 5px;
     }
 
     .search-container button i {
-      font-size: 16px; /* Icon size */
-      color: black; /* Icon color */
+      font-size: 16px;
+      color: black;
     }
 
-    /* Cart button styling */
     .cart-button {
-      background-color: transparent; /* Transparent background */
-      border: none; /* No border */
-      cursor: pointer; /* Pointer cursor on hover */
-      margin-left: 5px; /* Space between the search button and cart button */
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-left: 5px;
     }
 
     .cart-button i {
-      font-size: 16px; /* Icon size */
-      color: black; /* Icon color */
+      font-size: 16px;
+      color: black;
       transition: fill 0.8s;
     }
 
@@ -113,11 +94,10 @@
       color: #605b4a;
     }
 
-    /* Button container styling */
     .button-container {
       display: flex;
       align-items: center;
-      margin-top: 20px; /* Space above buttons */
+      margin-top: 20px;
       margin-left: 20px;
     }
 
@@ -131,96 +111,165 @@
     }
 
     .button-container a:hover {
-      color: #494538; 
+      color: #494538;
     }
 
     .button-container .home-button i {
-      font-size: 16px; 
+      font-size: 16px;
       margin-right: 5px;
     }
 
     .button-container .line {
-      flex-grow: 1; 
+      flex-grow: 1;
       height: 1px;
       background-color: black;
-      margin-left: 20px; 
+      margin-left: 20px;
       margin-right: 20px;
     }
 
-     @media (max-width: 768px) {
-      .header {
-          flex-direction: column; /* Stack header elements vertically */
-          align-items: flex-start; /* Align items to the start */
-      }
-
-      .logo-container {
-          margin-bottom: 10px; /* Space below the logo */
-      }
-
-      .search-container {
-          width: 100%; /* Full width for the search bar */
-      }
-
-      .search-container input[type="text"] {
-          width: 100%; /* Full width for better usability */
-      }
-
-      .button-container {
-          flex-direction: column; /* Stack buttons vertically */
-          align-items: flex-start; /* Align buttons to the start */
-          margin-left: 0; /* Reset margin */
-      }
-
-      .button-container a {
-          margin-bottom: 10px; /* Space between buttons */
-      }
-
-      .big-heading {
-          font-size: 36px; /* Reduce font size for smaller screens */
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center text */
-      }
-
-      .explore {
-          text-align: center; /* Center the explore text */
-          margin-left: 0; /* Reset margin */
-      }
-
-      .explore-button {
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center the button */
-      }
+    .checkout-container {
+      margin-top: 20px;
     }
-    
+
+    .checkout-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .checkout-table th, .checkout-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .checkout-table th {
+      background-color: #f2f2f2;
+    }
+
+    .special-instructions {
+      margin-top: 20px;
+    }
+
+    .special-instructions textarea {
+      width: 100%;
+      height: 60px;
+    }
+
+    #confirmOrder {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #605b4a;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #confirmOrder:hover {
+      background-color: #494538;
+    }
+
+    .info-section {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-section h3 {
+      margin-top: 0;
+    }
+
+    .info-section input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .info-section label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* New styles for dropdowns */
+    .dropdown {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .header .logo {
+        max-height: 60px; /* Adjust logo size for mobile */
+    }
+
+    .logo-text {
+        font-size: 22px; /* Reduce font size for mobile */
+    }
+
+    .search-container input[type="text"] {
+        width: 100%; /* Full-width input on mobile */
+        margin-bottom: 10px; /* Add some margin */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .button-container a {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+
+    .checkout-table th, .checkout-table td {
+        font-size: 12px; /* Smaller font size for table cells */
+    }
+
+    .checkout-table {
+        font-size: 14px; /* Adjust table font size */
+    }
+
+    .info-section input, .info-section select {
+        width: 100%; /* Full-width inputs */
+    }
+
+    #confirmOrder {
+        width: 100%; /* Full-width button */
+        padding: 15px; /* Increase padding for easier tapping */
+    }
+}
   </style>
 </head>
 <body>
   <div class="header">
-    <!-- Logo and text container -->
     <div class="logo-container">
-      <img src="pictures/LOGO.png" alt="KREME-A-PEPE-LOGO" class="logo" />
-      <span class="logo-text">Where every bite is worth every peso!</span>
+      <img class="logo" src="pictures/LOGO.png" alt="Logo">
+      <div class="logo-text">Where every bite is worth every peso!</div>
     </div>
-
-    <!-- Search bar -->
     <div class="search-container">
-      <input type="text" placeholder="Search..." />
-      <button>
-        <i class="fas fa-search"></i>
-      </button>
-      <a href="CHECKOUT.html" class="cart-button">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
+      <input type="text" placeholder="Search...">
+      <button><i class="fas fa-search"></i></button>
+      <button class="cart-button" onclick="toggleCartDrawer()"><i class="fas fa-shopping-cart"></i></button>
     </div>
   </div>
 
-  <!-- Buttons and line -->
   <div class="button-container">
     <a href="index.html" class="home-button">
       <i class="fas fa-home"></i> Home
     </a>
     <a href="ABOUT.html">About us</a>
-    <a href="STORY.html">Our story</a>
     <a href="KREME.html">Menu</a>
     <a href="NEWS.html">News</a>
     <a href="CONTACT.html">Contact us</a>
@@ -228,6 +277,314 @@
     <div class="line"></div>
   </div>
 
-  <!-- Other content goes here -->
+  <div class="header">
+    <h1>Checkout</h1>
+  </div>
+
+  <div class="checkout-container">
+    <h2>Cart Overview</h2>
+    <table class="checkout-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Purchase Option</th>
+          <th>Flavor</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody id="checkoutItemsContainer"></tbody>
+    </table>
+    <h3 id="subtotal">Subtotal: ₱0.00</h3>
+
+    <div class="special-instructions">
+      <label for="specialInstructions">Special Instructions:</label>
+      <textarea id="specialInstructions" readonly></textarea>
+    </div>
+
+<form action="https://formspree.io/f/mqakkrov" method="POST">
+    <div class="info-section">
+        <h3>Personal Information</h3>
+        <label for="name">Name:</label>
+        <input type="text" name="customer_name" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="customer_email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="customer_phone" id="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="info-section">
+        <h3>Shipping Address</h3>
+        <p style="font-size: 12px; color: gray; margin-top: 10px;">
+            (for international shipping, contact us through our socials)*
+        </p>
+        <label for="address">Address:</label>
+        <input type="text" name="customer_address" id="address" placeholder="Enter your address" required>
+
+        <label for="province">Province:</label>
+        <select name="customer_province" id="province" class="dropdown" onchange="updateCities()">
+            <option value="">Select Province</option>
+            <!-- Add your provinces here -->
+        </select>
+
+        <label for="city">City:</label>
+        <select name="customer_city" id="city" class="dropdown" onchange="updateBarangays()" disabled>
+            <option value="">Select City</option>
+            <!-- Cities will be populated based on the selected province -->
+        </select>
+
+        <label for="barangay">Barangay:</label>
+        <input type="text" name="customer_barangay" id="barangay" placeholder="Enter your barangay" required>
+
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" name="customer_postal_code" id="postalCode" placeholder="Enter your postal code" required>
+
+        <label for="country">Country:</label>
+        <input type="text" name="customer_country" id="country" value="Philippines" readonly>
+    </div>
+
+    <input type="submit" id="confirmOrder" value="Confirm Order">
+</form>
+
+
+  <script>
+    window.onload = function() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const instructions = localStorage.getItem("specialInstructions") || '';
+        renderCheckout(cartItems, instructions);
+    };
+
+    function renderCheckout(cartItems, instructions) {
+        const checkoutItemsContainer = document.getElementById('checkoutItemsContainer');
+        checkoutItemsContainer.innerHTML = '';
+
+        if (cartItems.length === 0) {
+            checkoutItemsContainer.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
+            document.getElementById('subtotal').innerText = 'Subtotal: ₱0.00';
+            return;
+        }
+
+        // Log the cartItems to see their structure
+        console.log(cartItems);
+
+        cartItems.forEach(item => {
+            const itemRow = document.createElement('tr');
+            itemRow.innerHTML = `
+                <td>${item.name || "N/A"}</td>
+                <td>₱${(item.price || 0).toFixed(2)}</td>
+                <td>${item.size || "N/A"}</td>
+                <td>${item.flavor || "N/A"}</td>
+                <td>${item.quantity || 0}</td>
+            `;
+            checkoutItemsContainer.appendChild(itemRow);
+        });
+
+        const total = cartItems.reduce((sum, item) => {
+            const price = item.price || 0; // Default to 0 if undefined
+            const quantity = item.quantity || 0; // Default to 0 if undefined
+            return sum + (price * quantity);
+        }, 0);
+        
+        document.getElementById('subtotal').innerText = `Subtotal: ₱${total.toFixed(2)}`;
+        document.getElementById('specialInstructions').value = instructions;
+    }
+
+    // Load the provinces, cities, and barangays
+    const provinces = {
+                "Abra": ["Bangued", "Bucay", "Lagangilang", "Lagayan", "Pilar", "San Isidro", "Tubo"],  
+                "Agusan del Norte": ["Butuan City", "Cabadbaran City", "Las Nieves", "Magallanes", "Nasipit", "Remedios T. Romualdez", "Santiago", "Tubay"],
+                "Agusan del Sur": ["Bunawan", "Bayugan City", "Esperanza", "La Paz", "Loreto", "San Francisco", "San Luis", "Talacogon", "Trento", "Veruela"],
+                "Aklan": ["Kalibo", "Altavas", "Balete", "Banga", "Batan", "Libacao", "Madalag", "Makato", "Malinao", "Nabas", "New Washington", "Numancia", "Tangalan"],  
+                "Albay": ["Legazpi City", "Tabaco City", "Daraga", "Camalig", "Guinobatan", "Lagonoy", "Malilipot", "Manito", "Rapu-Rapu", "Santo Domingo", "Tiwi"],  
+                "Antique": ["San Jose de Buenavista", "Sibalom", "Patnongon", "Bugasong", "Tibiao", "San Remigio", "Hamtic", "Valderrama", "Anini-y", "Libertad", "Belison", "Pintuyan"],  
+                "Apayao": ["Conner", "Flora", "Calanasan", "Kabugao", "Luna", "Pudtol", "Santa Marcela"],  
+                "Aurora": ["Baler", "Casiguran", "Dilasag", "Dinalungan", "Dipaculao", "Maria Aurora", "San Luis", "San Vicente"], 
+                "Bataan": ["Balanga City", "Orani", "Abucay", "Bagac", "Mariveles", "Limay", "Pilar", "Hermosa", "Dinalupihan"],  
+                "Batanes": ["Basco", "Sabtang", "Itbayat", "Mahatao", "Uyugan", "Ivana", "Batan"],
+                "Batangas": ["Batangas City", "Lipa City", "Tanauan City", "Nasugbu", "Balayan", "Lemery", "San Jose", "Taal", "Talisay", "Laurel", "Calatagan", "Mabini", "San Juan", "Batangas", "Bauan", "Agoncillo", "Malvar", "Padre Garcia", "San Luis", "Rosario", "Balete"], 
+                "Benguet": ["La Trinidad", "Baguio City", "Itogon", "Tuba", "Sablan", "Atok", "Bokod", "Kabayan", "Mankayan", "Buguias", "Tublay"],  
+                "Bohol": ["Tagbilaran City", "Dumaguete City", "Carmen", "Loon", "Panglao", "Balilihan", "Baclayon", "Corella", "Maribojoc", "Sierra Bullones", "Danao", "Inabanga", "Tubigon", "Jagna", "Lila", "Antequera", "Bilar", "Buenavista", "Clarin", "Getafe", "Loay", "Trinidad"],  
+                "Bukidnon": ["Malaybalay City", "Valencia City", "Maramag", "Talakag", "San Fernando", "Cabanglasan", "Kadingilan", "Baungon", "Manolo Fortich", "Sumilao", "Lantapan", "Impasug-ong", "Quezon", "Bukidnon"],  
+                "Bulacan": ["Malolos City", "Meycauayan City", "San Jose del Monte City", "Balagtas", "Baliuag", "Bulakan", "Guiguinto", "Hagonoy", "Obando", "Pandi", "San Ildefonso", "San Rafael", "Santa Maria", "Angat", "Doña Remedios Trinidad", "Norzaragay", "Pulong Buhangin", "San Miguel", "Bocaue"],                
+                "Cagayan": ["Tuguegarao City", "Aparri", "Lal-lo", "Piat", "Camalaniugan", "Gonzaga", "Baggao", "Santa Ana", "Claveria", "Lasam", "Sanchez Mira", "Pamplona", "Enrile", "Solana", "Tuao", "Aglipay"],  
+                "Camarines Norte": ["Daet", "Capalonga", "Jose Panganiban", "Paracale", "Mercedes", "San Lorenzo Ruiz", "Basud", "Talisay", "Labo", "Vinzons", "Santo Domingo", "San Vicente", "Bauang"], 
+                "Camarines Sur": ["Naga City", "Iriga City", "Buhi", "Bula", "Calabanga", "Canaman", "Caramoan", "Gainza", "Garchitorena", "Minalabac", "Nabua", "Pili", "Sagñay", "San Fernando", "Sipocot", "Tigaon", "Tinambac"],  
+                "Camiguin": ["Mambajao", "Mahinog", "Guinsiliban", "Sagbayan", "Catarman", "Campos", "Saan Juan"],  
+                "Capiz": ["Roxas City", "Panay", "Pilar", "Maayon", "Mambusao", "Dumalag", "Dumarao", "Ivisan", "Tapaz", "Punta Talabaan", "Jamindan", "Culasi", "Banga", "Capiz"],  
+                "Cavite": ["Kawit", "Noveleta", "Rosario", "Cavite City", "General Mariano Alvarez", "Gen. Emilio Aguinaldo", "Silang", "Bacoor", "Imus", "Dasmariñas", "Tagaytay", "Alfonso", "Amadeo", "Indang", "Mendez", "Naic", "Tanza", "Ternate", "Magallanes", "Puerto Azul"], 
+                "Cebu": ["Cebu City", "Mandaue City", "Lapu-Lapu City", "Toledo City", "Talisay City", "Carcar City", "Danao City", "Bogo City", "Naga City", "Samboan", "Sogod", "Barili", "Aloguinsan", "Bantayan", "Borbon", "Carmen", "Catmon", "Consolacion", "Cordova", "Dalaguete", "Dumanjug", "Ginatilan", "Lambug", "Liloan", "Medellin", "San Fernando", "San Francisco", "Santa Fe", "Sierra Bullones", "Tabogon", "Tabuelan", "Tudela"],  
+                "Compostela Valley": ["Nabunturan", "Montevista", "New Bataan", "Pantukan", "Laak", "Maco", "Mawab", "Maragusan", "Compostela"],  
+                "Davao de Oro": ["Nabunturan", "Montevista", "New Bataan", "Pantukan", "Laak", "Maco", "Mawab", "Maragusan", "Compostela"],
+                "Davao del Norte": ["Tagum City", "Braulio E. Dujali", "Carmen", "Kapalong", "Asuncion", "New Corella", "San Ignacio", "Panabo City"],
+                "Davao Oriental": ["Mati City", "Baganga", "Banaybanay", "Caraga", "Davao Oriental", "Governor Generoso", "Lupon", "San Isidro", "Santo Tomas", "Tarragona"],
+                "Eastern Samar": ["Borongan City", "Guiuan", "Salcedo", "Mercedes", "Balay Ni Mayang", "Maydolong", "San Policarpo", "Quinapondan"],
+                "Guimaras": ["Jordan", "Buenavista", "Hamtic", "San Lorenzo", "Sibunag"],
+                "Ifugao": ["Lamut", "Natonin", "Hingyon", "Asipulo", "Lamut", "Mayoyao", "Tinoc", "Banaue"],
+                "Ilocos Norte": ["Laoag City", "Batac City", "Pagudpud", "Paoay", "Currimao", "Bacarra", "Dingras", "Sarrat", "San Nicolas", "Solsona"],
+                "Ilocos Sur": ["Vigan City", "Candon City", "Santa Maria", "Sinait", "Santiago", "Cabugao", "Bantay", "Magsingal", "Quirino", "Tagudin"],
+                "Iloilo": ["Iloilo City", "Passi City", "Pavia", "San Miguel", "San Enrique", "Bingawan", "Leon", "Maasin", "Miag-ao", "New Lucena"],
+                "Isabela": ["Ilagan", "Santiago City", "Cauayan City", "Angadanan", "Aurora", "Benito Soliven", "Gamu", "Jones", "San Pablo", "Quezon"],
+                "Kalinga": ["Tabuk City", "Lubuagan", "Pasil", "Rizal", "Pinukpuk", "Tanudan", "Balbalan"],
+                "La Union": ["San Fernando City", "Bacnotan", "Luna", "Agoo", "Bauang", "Bacnotan", "Bagulin", "Naguilian", "Pugo", "Santol"],
+                "Laguna": ["Santa Cruz", "San Pablo City", "Biñan City", "Calamba City", "Los Baños", "San Pedro", "Bay", "Alaminos", "Luisiana", "Victoria"],
+                "Lanao del Norte": ["Tubod", "Iligan City", "Baloi", "Kapatagan", "Linamon", "Marawi City", "Magsaysay", "Maigo", "Sultan Naga Dimaporo"],
+                "Lanao del Sur": ["Marawi City", "Balo-i", "Lumbatan", "Malabang", "Maguindanao", "Sultan Alonto", "Banga", "Bongao"],
+                "Leyte": ["Tacloban City", "Ormoc City", "Baybay City", "Dulag", "Hindang", "Inopacan", "Palo", "Abuyog", "Mahaplag", "Leyte"],
+                "Maguindanao": ["Shariff Aguak", "Datu Odin Sinsuat", "Datu Saudi-Ampatuan", "Mamasapano", "Sultan Kudarat", "Pagalungan", "Datu Salibo", "Talayan"],
+                "Marinduque": ["Boac", "Mogpog", "Gasan", "Buenavista", "Torrijos", "Santa Cruz"],
+                "Masbate": ["Masbate City", "Mobo", "Pio V. Corpuz", "Dimasalang", "Cawayan", "Aroroy", "Milagros", "Balud", "San Fernando", "Batuan"],
+                "Misamis Occidental": ["Ozamiz City", "Tangub City", "Clarin", "Don Victoriano Chiongbian", "Initao", "Jimenez", "Plaridel", "Sinacaban", "Sogod"],
+                "Misamis Oriental": ["Cagayan de Oro City", "Gingoog City", "El Salvador", "Villanueva", "Balingasag", "Tagoloan", "Jasaan", "Claveria", "Sugbongcogon"],
+                "Mountain Province": ["Bontoc", "Sabangan", "Sagada", "Tadian", "Natonin", "Besao", "Barlig"],
+                "Negros Occidental": ["Bacolod City", "Silay City", "Talisay City", "Victorias City", "La Carlota City", "San Carlos City", "Himamaylan City", "Kabankalan City", "Sipalay City", "Escalante City"],
+                "Negros Oriental": ["Dumaguete City", "Bayawan City", "Tanjay City", "Bacong", "Amlan", "San Jose", "Valencia", "Siaton", "Zamboanguita"],
+                "Northern Samar": ["Catarman", "Bobon", "Laoang", "San Isidro", "San Antonio", "Victoria", "Las Navas", "Pambujan", "Allen", "Silvino Lobos"],
+                "Nueva Ecija":  ["Palayan City", "Cabanatuan City", "Gapan City", "San Jose City", "Science City of Muñoz", "Aliaga", "Bongabon", "Cabiao", "Jaen", "San Antonio"],
+                "Nueva Vizcaya": ["Bayombong", "Solano", "Dupax del Norte", "Dupax del Sur", "Villaverde", "Quezon", "Kasibu", "Aritao", "Ambaguio", "Bagabag"], 
+                "Occidental Mindoro": ["Mamburao", "San Jose", "Calintaan", "Rizal", "Sablayan", "Santa Cruz", "Looc", "Lubang", "Occidental Mindoro"],
+                "Oriental Mindoro": ["Calapan City", "Baco", "Bansud", "Bongabong", "Gloria", "Mansalay", "Naujan", "Pola", "San Teodoro", "Victoria"],
+                "Palawan": ["Puerto Princesa City", "El Nido", "Coron", "San Vicente", "Roxas", "Taytay", "Cuyo", "Araceli", "Balabac", "Quezon"], 
+                "Pampanga": ["San Fernando City", "Angeles City", "Mabalacat City", "Apalit", "Bacolor", "Candaba", "Floridablanca", "Guagua", "Lubao", "Mexico", "Porac", "Sasmuan", "Santa Rita", "Bulaon"],
+                "Pangasinan": ["Lingayen", "Dagupan City", "San Carlos City", "Urdaneta City", "Mangaldan", "Binmaley", "Mapandan", "Natividad", "Infanta", "Agno"],
+                "Quezon": ["Lucena City", "Tayabas City", "Sariaya", "Candelaria", "San Pablo City", "Mauban", "Infanta", "General Nakar", "Quezon", "Pitogo"],
+                "Quirino": ["Cabarroguis", "Maddela", "Saguday", "Nagtipunan", "Diffun", "Quirino"],
+                "Rizal": ["Antipolo City", "Rodriguez", "Cainta", "Binangonan", "Taytay", "San Mateo", "Montalban", "Baras", "Teresa"],
+                "Romblon": ["Romblon", "San Agustin", "Odiongan", "Tibiao", "Calatrava", "Ferrol", "Concepcion"],
+                "Samar": ["Catbalogan City", "Calbayog City", "Basey", "Marabut", "San Jorge", "San Jose de Buan", "Talalora", "Pinabacdao", "Almagro", "Gandara"],
+                "Sarangani": ["Alabel", "Glan", "Malapatan", "Maasim", "Kiamba", "Sarangani", "Tukuran", "Banga", "Malungon"],
+                "Siquijor": ["Siquijor", "Larena", "San Juan", "Lazi", "Maria", "Bacong", "Siquijor"],
+                "Sorsogon": ["Sorsogon City", "Bulusan", "Casiguran", "Donsol", "Gubat", "Matnog", "Prieto Diaz", "Santa Magdalena"],
+                "South Cotabato": ["Koronadal City", "General Santos City", "Tupi", "Tantangan", "Polomolok", "Surallah", "Banga", "Lake Sebu", "Norala"],
+                "Sultan Kudarat": ["Isulan", "Sultan Kudarat", "Bagumbayan", "Columbio", "Lambayong", "Lutayan", "Palimbang", "Sen. Ninoy Aquino", "Tacurong City"],
+                "Surigao del Norte": ["Surigao City", "Bancasi", "Carmen", "Gigaquit", "Placer", "Mainit", "Sison", "San Francisco", "Santa Monica"],
+                "Surigao del Sur": ["Tandag City", "Bislig City", "Cagwait", "Carascal", "Cortes", "Lingig", "Madrid", "San Miguel", "Tagbina"],
+                "Tawi-Tawi": ["Bongao", "Sapa-Sapa", "Simunul", "Sapa-Sapa", "Tandubas", "Mapun", "Languyan"],
+                "Tarlac": ["Tarlac City", "Concepcion", "La Paz", "San Jose", "Victoria", "Anao", "Bamban", "Capas", "Pura"],
+                "Zambales": ["Iba", "Olongapo City", "San Antonio", "Subic", "Castillejos", "San Marcelino", "Botolan", "Palauig", "Masinloc"],
+                "Zamboanga del Norte": ["Dipolog City", "Dapitan City", "Tampilisan", "Siocon", "Sergio Osmeña Sr.", "Salug", "Godod", "Kalawit", "Labason"],
+                "Zamboanga del Sur": ["Pagadian City", "Zamboanga City", "Guipos", "Lakewood", "Sominot", "Talusan", "Dimataling", "Pitogo", "Lapuyan"],
+    };
+
+
+    // Populate province dropdown
+    Object.keys(provinces).forEach(province => {
+      const option = document.createElement('option');
+      option.value = province;
+      option.textContent = province;
+      document.getElementById('province').appendChild(option);
+    });
+
+    // Update cities based on selected province
+    function updateCities() {
+      const provinceSelect = document.getElementById('province');
+      const citySelect = document.getElementById('city');
+      citySelect.innerHTML = '<option value="">Select City</option>';
+      document.getElementById('barangay').innerHTML = '<option value="">Select Barangay</option>';
+      citySelect.disabled = false;
+
+      const selectedProvince = provinceSelect.value;
+      if (selectedProvince) {
+        provinces[selectedProvince].forEach(city => {
+          const option = document.createElement('option');
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+        });
+      }
+    }
+
+    function validateEmail() {
+    const emailInput = document.getElementById("email").value;
+    const messageDiv = document.getElementById("email-validation-message");
+
+    // Regex pattern to check if the email ends with @gmail.com or @yahoo.com
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+
+    if (!emailPattern.test(emailInput)) {
+        messageDiv.innerText = "Please input a valid email (must end with @gmail.com or @yahoo.com).";
+        return false;
+    } else {
+        messageDiv.innerText = ""; // Clear the message if valid
+    }
+    return true; // Return true if the email is valid
+}
+
+// Get references to form fields and the confirm order button
+const emailInput = document.getElementById('email');
+const orderInstructionsInput = document.getElementById('orderInstructions');
+const countrySelect = document.getElementById('country');
+const provinceSelect = document.getElementById('province');
+const cityInput = document.getElementById('city');
+const barangayInput = document.getElementById('barangay');
+const confirmOrderButton = document.getElementById('confirmOrderButton');
+
+// Function to check if all fields are filled
+function checkFields() {
+    const emailValid = emailInput.value.includes('@gmail.com') || emailInput.value.includes('@yahoo.com');
+    const orderInstructionsFilled = orderInstructionsInput.value.trim() !== '';
+    const countrySelected = countrySelect.value !== '';
+    const provinceSelected = provinceSelect.value !== '';
+    const cityFilled = cityInput.value.trim() !== '';
+    const barangayFilled = barangayInput.value.trim() !== '';
+
+    // Enable the button if all fields are filled
+    confirmOrderButton.disabled = !(emailValid && orderInstructionsFilled && countrySelected && provinceSelected && cityFilled && barangayFilled);
+}
+
+// Function to handle order confirmation
+function handleOrderConfirmation(event) {
+    // Prevent form submission if button is disabled
+    if (confirmOrderButton.disabled) {
+        event.preventDefault(); // Prevent form submission
+        alert('Please fill out all fields correctly before confirming your order.'); // Alert for incomplete fields
+    } else {
+        alert('Order confirmed!'); // Proceed with order confirmation
+        // You can add your order processing logic here
+    }
+}
+
+
+// Function to validate required fields
+function validateFields() {
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const province = document.getElementById('province').value; 
+    const city = document.getElementById('city').value; 
+    const barangay = document.getElementById('barangay').value; 
+    const postalCode = document.getElementById('postalCode').value; 
+    const specialInstructions = document.getElementById('specialInstructions').value;
+
+    // Check if any of the fields are empty
+    if (!email || !name || !phone || !address || !province || !city || !barangay || !postalCode || !specialInstructions) {
+        alert('Please fill in all required fields before confirming your order!');
+        return false; // Indicate validation failure
+    }
+
+    // Additional validation for email format
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+    if (!emailPattern.test(email)) {
+        alert('Please input a valid email! (must end with @gmail.com or @yahoo.com)');
+        return false; // Indicate validation failure
+    }
+
+    return true; // Indicate validation success
+}
+
+// Event listener for the Confirm Order button
+document.getElementById('confirmOrder').addEventListener('click', function(event) {
+    if (!validateFields()) {
+        event.preventDefault(); // Prevent form submission if validation fails
+    } else {
+        // Proceed with the order confirmation
+        alert('Order confirmed!');
+        // You can add additional logic to handle successful order confirmation
+    }
+});
+    
+</script>
 </body>
 </html>
