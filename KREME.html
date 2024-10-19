@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Acme&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
   
   <style>
-    body {
+        body {
       background-color: rgb(236, 234, 231);
       font-family: "Outfit", sans-serif;
       font-size: 14px;
@@ -124,14 +126,12 @@
       height: 1px;
       background-color: black;
       margin-left: 20px;
-      margin-right: 20px;
+      margin-right: 20p x;
     }
 
     .menu-section {
-      display: flex;
       flex-direction: column;
-      height: calc(100vh - 100px);
-      overflow-y: auto;
+      overflow-y: hidden;
     }
 
     .menu-item {
@@ -139,8 +139,8 @@
       width: 100%;
       max-width: 100%;
       margin-bottom: 20px;
-      height: 100%;
-      overflow: hidden;
+      height: auto;
+      overflow: visible;
       background-color: transparent;
     }
 
@@ -173,6 +173,7 @@
       flex-direction: column;
       justify-content: flex-start;
       margin-top: 100px;
+      padding-bottom: 20px;
     }
 
     .menu-title {
@@ -188,6 +189,10 @@
       margin-bottom: 10px;
       font-family: 'Outfit', sans-serif;
       font-size: 15px;
+      text-align: justify;
+      margin-right: 40px;
+      margin-top: 15px;
+      margin-bottom: 12px;
     }
 
     .choices {
@@ -263,125 +268,476 @@
       margin: 10px 0;
     }
 
-    @media (max-width: 768px) {
-      .header {
+    .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden */
+    width: 350px; /* Width of the drawer */
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it's above other elements */
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc; /* Add a bottom border for separation */
+    padding-bottom: 10px;
+}
+
+.drawer-content {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items on the edges */
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Add a bottom border for separation */
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex: 1; /* Allow this div to grow */
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 900; /* Below the drawer, above other elements */
+    display: none; /* Initially hidden */
+}
+
+#totalAmount {
+    font-weight: bold; /* Make total amount bold */
+    font-size: 18px; /* Increase font size for emphasis */
+    margin-top: 20px; /* Space above total */
+}
+
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 900; /* Below the drawer, above other elements */
+    display: none; /* Initially hidden */
+}
+
+.close-drawer {
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 24px; /* Bigger font size */
+    color: #605b4a; /* Match your theme color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s; /* Transition for color change */
+}
+
+.close-drawer:hover {
+    color: #494538; /* Darker color on hover */
+}
+
+.ingredient-list {
+    margin-top: 10px;
+    color: #706f6f;
+}
+
+.ingredient-name {
+    color: #494538;
+    font-size: 18px;
+}
+
+.allergens-list {
+    margin-top: 10px;
+    color: #706f6f;
+}
+
+.allergen-name {
+    color: #494538;
+    font-size: 18px;
+}
+
+.benefits-section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 15px; /* Adjust size to fit your site */
+}
+
+.benefit-item i {
+    margin-right: 10px; /* Space between icon and text */
+    color: #494538; /* Color to match your branding */
+    font-size: 1.2rem; /* Size of the icons */
+}
+
+/* Styling for the order instructions label */
+.instruction-label {
+    cursor: pointer;
+    color: #333; /* Darker gray for better visibility */
+    font-size: 1.2em; /* Slightly larger font size for emphasis */
+    margin-bottom: 10px; /* Space between label and textarea */
+    font-weight: bold; /* Makes it stand out */
+}
+
+/* Styling for the textarea */
+#instructions {
+    width: 90%; /* Full width for the textbox */
+    height: 80px; /* Adjust height as needed */
+    padding: 10px; /* Inner padding for comfort */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1em; /* Consistent font size */
+    resize: none; /* Prevent resizing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for the checkout section */
+.checkout-section {
+    text-align: center; /* Center the checkout button */
+    margin-top: 20px; /* Space above the section */
+}
+
+/* Styling for the checkout button */
+.checkout-section button {
+    background-color: #494538; /* Green color */
+    color: white;
+    border: none;
+    padding: 12px 24px; /* More padding for a bigger button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.checkout-section button:hover {
+    background-color: #27251e; /* Darker shade on hover */
+}
+
+/* Optional: Adding a margin between the instructions and checkout button */
+.checkout-section button + p {
+    margin-top: 10px; /* Space between button and any following text */
+}
+
+@media (max-width: 600px) {
+    .header {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .logo-container {
-        margin-bottom: 10px;
-      }
-
-      .search-container {
-        width: 100%;
-      }
-
-      .button-container {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
-      }
-
-      .button-container a {
-        margin-bottom: 10px;
-      }
-
-      .menu-item {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .menu-image {
-        margin-right: 0;
-        margin-top: 0;
-        height: auto;
-      }
-
-      .menu-info {
-        max-width: 100%;
-        padding-left: 0;
-        text-align: center;
-      }
     }
+    .menu-section {
+        flex-direction: column;
+    }
+    .menu-item {
+        flex-direction: column; /* Stack image and info vertically */
+        align-items: center; /* Center align */
+    }
+    .menu-image {
+        max-width: 100%;
+        margin: 0; /* Remove margins */
+    }
+    .menu-info {
+        max-width: 100%; /* Use full width */
+        padding: 0; /* Reset padding */
+        text-align: center; /* Center text */
+    }
+}
+
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="logo-container">
-      <img class="logo" src="pictures/LOGO.png" alt="Logo">
-      <div class="logo-text">Where every bite is worth every peso!</div>
-    </div>
+    <div class="header">
+      <div class="logo-container">
+        <img class="logo" src="pictures/LOGO.png" alt="Logo">
+        <div class="logo-text">Where every bite is worth every peso!</div>
+      </div>
+       <!-- Search bar -->
     <div class="search-container">
-      <input type="text" placeholder="Search...">
-      <button><i class="fas fa-search"></i></button>
-      <button class="cart-button"><i class="fas fa-shopping-cart"></i></button>
+      <input type="text" placeholder="Search..." />
+      <button>
+        <i class="fas fa-search"></i>
+      </button>
+      <a href="KREME.html" class="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
     </div>
   </div>
-
-  <div class="button-container">
-    <a href="index.html" class="home-button">
-      <i class="fas fa-home"></i> Home
-    </a>
-    <a href="ABOUT.html">About us</a>
-    <a href="STORY.html">Our story</a>
-    <a href="KREME.html">Menu</a>
-    <a href="NEWS.html">News</a>
-    <a href="CONTACT.html">Contact us</a>
-    <a href="FAQs.html">FAQs</a>
-    <div class="line"></div>
-  </div>
-
-  <div class="menu-section">
-    <div class="menu-item">
-      <div class="menu-image">
-        <img src="pictures/LOGO.png" alt="Product Image">
-      </div>
-      <div class="menu-info">
-        <div class="menu-title">Product Title</div>
-        <div class="menu-description">This is a description of the product. It is delicious and nutritious!</div>
-        
-        <div class="choices">
-          <label for="size">Purchase Option:</label>
-          <select id="size" onchange="updatePrice()">
-            <option value="per-piece">Per Piece - Will vary</option>
-            <option value="bundle" data-price="85.00">Bundle - ₱85.00</option>
-          </select>
-          
-          <label for="flavor">Select Flavor:</label>
-          <select id="flavor" onchange="updatePrice()">
-            <option value="leche-flan" data-price="27.65">Leche Flan - ₱27.65</option>
-            <option value="ube" data-price="35.00">Ube - ₱35.00</option>
-            <option value="condensed-milk" data-price="28.50">Condensed Milk - ₱28.50</option>
-          </select>
+  
+    <div class="button-container">
+      <a href="index.html" class="home-button">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a href="ABOUT.html">About us</a>
+      <a href="KREME.html">Menu</a>
+      <a href="NEWS.html">News</a>
+      <a href="CONTACT.html">Contact us</a>
+      <a href="FAQs.html">FAQs</a>
+      <div class="line"></div>
+    </div>
+  
+    <div class="menu-section">
+      <div class="menu-item">
+        <div class="menu-image">
+          <img src="pictures/LOGO.png" alt="Product Image">
         </div>
-
-        <div class="add-to-cart">Add to Cart</div>
-        <div id="price">Total Price: ₱0.00</div>
-        <div class="ingredients"><b>Ingredients:</b> <ul><li>Sugar</li><li>Milk</li></ul></div>
-        <div class="allergens"><b>Allergens:</b> <ul><li>Dairy</li><li>Eggs</li></ul></div>
-        <div class="benefits"><b>Benefits:</b> <ul><li>High in Calcium</li></ul></div>
+        <div class="menu-info">
+          <div class="menu-title">Kreme-a-Pepe</div>
+          <div class="menu-description">Kreme-a-Pepe takes the shape of the Philippines' piso coin, featuring the face of Jose Rizal, highlighting its goal of promoting Filipino culture. The delicious, coin-shaped treats can be purchased individually, making them an ideal choice for a quick snack on the go. For those who prefer to share or are looking for a simple gift or pasalubong, we also offer bundles, which include 3 pieces.</div>
+  
+          <div class="choices">
+              <label for="size">Purchase Option:</label>
+              <select id="size" onchange="updatePrice()">
+                  <option value="Per piece">Per Piece - Will vary</option>
+                  <option value="Bundle" data-price="85.00">Bundle - ₱85.00</option>
+              </select>
+          
+              <label for="flavor">Choose Flavor:</label>
+              <select id="flavor" onchange="updatePrice()">
+                  <option value="" disabled selected>Choose Flavor</option>
+                  <option value="Leche Flan" data-price="27.65">Leche Flan - ₱27.65</option>
+                  <option value="Ube" data-price="35.00">Ube - ₱26.48</option>
+                  <option value="Condensed Milk" data-price="28.50">Condensed Milk - ₱22.32</option>
+              </select>
+          </div>
+          
+          <div class="add-to-cart">Add to Cart</div>
+          <div id="price">Total Price: ₱0.00</div>
+  
+          <div class="ingredients">
+              <div class="ingredient-name"><b>Ingredients:</b></div>
+              <div class="ingredient-list">Cake Flour, Baking Powder, Baking Soda, Eggs, Milk, Sugar, Vegetable Oil, Leche Flan (flavor), Ube (flavor), Condensed Milk (flavor)</div>
+          </div>        
+          
+          <div class="allergens">
+              <div class="allergen-name"><b>Allergens:</b></div>
+              <div class="allergens-list"><ul><li>Wheat</li><li>Eggs</li><li>Dairy (Milk, Condensed Milk)</li></ul></div>
+  
+              <div class="benefits-section">
+                  <div class="benefit-item">
+                      <i class="fas fa-leaf"></i>
+                      <span>Locally Sourced Ingredients</span>
+                  </div>
+                  <div class="benefit-item">
+                      <i class="fas fa-recycle"></i>
+                      <span>Eco-Friendly Packaging</span>
+                  </div>
+                  <div class="benefit-item">
+                      <i class="fas fa-globe"></i>
+                      <span>Culturally Enriching</span>
+                  </div>
+                  <div class="benefit-item">
+                      <i class="fas fa-handshake"></i>
+                      <span>Partnered with the “Serbisyo sa Barangay Livelihood Program”</span>
+                  </div>
+              </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <script>
-    function updatePrice() {
-      const sizeSelect = document.getElementById("size");
-      const flavorSelect = document.getElementById("flavor");
-
-      const isBundle = sizeSelect.value === "bundle";
-
-      // Disable flavor selection if "Bundle" is chosen
-      flavorSelect.disabled = isBundle;
-
-      // Get the price values only if flavor selection is not disabled
-      const sizePrice = parseFloat(sizeSelect.options[sizeSelect.selectedIndex].getAttribute("data-price")) || 0;
-      const flavorPrice = isBundle ? 0 : parseFloat(flavorSelect.options[flavorSelect.selectedIndex].getAttribute("data-price")) || 0;
-
-      const totalPrice = sizePrice + flavorPrice;
-      document.getElementById("price").innerText = `Total Price: ₱${totalPrice.toFixed(2)}`;
+  
+      <div class="cart-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h2>Your Cart</h2>
+            <button class="close-drawer" onclick="toggleCartDrawer()">X</button>
+        </div>
+        <div class="drawer-content" id="cartContent">
+            <h3>Products</h3>
+            <div class="divider"></div>
+            <div id="cartItemsContainer"></div>
+            <div class="divider"></div>
+            <h4 id="totalAmount">Total: ₱0.00</h4>
+        </div>
+  
+        <div class="instruction-section">
+    <label class="instruction-label" for="instructions" onclick="toggleInstructions()">Order Special Instructions:</label>
+    <textarea id="instructions" style="display: none;"></textarea> <!-- Initially hidden -->
+</div>
+  
+        <div class="checkout-section">
+            <button onclick="proceedToCheckout()">Checkout</button>
+        </div>
+      </div>
+  
+      <script>
+    function toggleInstructions() {
+        const instructionsTextarea = document.getElementById('instructions');
+        if (instructionsTextarea.style.display === 'none') {
+            instructionsTextarea.style.display = 'block'; // Show the textarea
+            instructionsTextarea.focus(); // Focus on the textarea
+        } else {
+            instructionsTextarea.style.display = 'none'; // Hide the textarea
+        }
     }
-  </script>
-</body>
-</html>
+
+
+        function updatePrice() {
+            const sizeSelect = document.getElementById("size");
+            const flavorSelect = document.getElementById("flavor");
+  
+            const isBundle = sizeSelect.value === "Bundle";
+            flavorSelect.disabled = isBundle;
+  
+            const sizePrice = parseFloat(sizeSelect.options[sizeSelect.selectedIndex].getAttribute("data-price")) || 0;
+            const flavorPrice = isBundle ? 0 : parseFloat(flavorSelect.options[flavorSelect.selectedIndex].getAttribute("data-price")) || 0;
+  
+            const totalPrice = sizePrice + flavorPrice;
+            document.getElementById("price").innerText = `Total Price: ₱${totalPrice.toFixed(2)}`;
+        }
+  
+        function toggleCartDrawer() {
+            const cartDrawer = document.getElementById("cartDrawer");
+            const overlay = document.getElementById("overlay");
+  
+            if (cartDrawer.style.right === "0px") {
+                cartDrawer.style.right = "-400px"; // Hide drawer
+                overlay.style.display = "none"; // Hide overlay
+            } else {
+                cartDrawer.style.right = "0px"; // Show drawer
+                overlay.style.display = "block"; // Show overlay
+            }
+        }
+  
+        document.querySelector('.add-to-cart').onclick = function() {
+            const sizeSelect = document.getElementById("size");
+            const flavorSelect = document.getElementById("flavor");
+            const isBundle = sizeSelect.value === "Bundle";
+  
+            // Only require flavor selection if the purchase option is not "bundle"
+            if (!isBundle && !flavorSelect.value) {
+                alert("Please select a flavor before adding to cart.");
+                return; // Exit the function if no flavor is selected
+            }
+  
+            const product = {
+                name: document.querySelector('.menu-title').textContent, // Product title
+                image: "pictures/LOGO.png", // Replace with actual image path
+                price: parseFloat(document.getElementById("price").innerText.replace(/[^0-9.-]+/g,"")),
+                size: sizeSelect.value,
+                flavor: isBundle ? "N/A" : flavorSelect.value, // Set flavor to "N/A" if it's a bundle
+            };
+            addToCart(product);
+            toggleCartDrawer();
+        };
+  
+        let cartItems = [];
+  
+        function addToCart(product) {
+            const existingItem = cartItems.find(item => item.name === product.name && item.size === product.size && item.flavor === product.flavor);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cartItems.push({ ...product, quantity: 1 });
+            }
+            renderCart();
+        }
+  
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+            cartItemsContainer.innerHTML = '';
+  
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                document.getElementById('totalAmount').innerText = 'Total: ₱0.00';
+                return;
+            }
+  
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <div><strong>${item.name}</strong></div>
+                        <div>Price: ₱${item.price.toFixed(2)}</div>
+                        <div>Purchase Option: ${item.size}</div>
+                        <div>Flavor: ${item.flavor}</div>
+                        <div class="quantity-control">
+                            <button onclick="updateQuantity('${item.name}', '${item.size}', '${item.flavor}', -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.name}', '${item.size}', '${item.flavor}', 1)">+</button>
+                            <button onclick="removeItem('${item.name}', '${item.size}', '${item.flavor}')">🗑️</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+  
+            const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('totalAmount').innerText = `Total: ₱${total.toFixed(2)}`;
+        }
+  
+        function updateQuantity(name, size, flavor, change) {
+            const item = cartItems.find(item => item.name === name && item.size === size && item.flavor === flavor);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeItem(name, size, flavor);
+                }
+                renderCart();
+            }
+        }
+  
+        function removeItem(name, size, flavor) {
+            cartItems = cartItems.filter(item => !(item.name === name && item.size === size && item.flavor === flavor));
+            renderCart();
+        }
+  
+        function proceedToCheckout() {
+            const instructions = document.getElementById("instructions").value;
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            localStorage.setItem("specialInstructions", instructions);
+            window.location.href = "CHECKOUT.html"; // Navigate to checkout page
+        }
+      </script>
+      <div class="overlay" id="overlay"></div>
+  </body>
+  
