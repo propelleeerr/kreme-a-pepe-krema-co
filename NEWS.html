@@ -265,70 +265,28 @@
       overflow: hidden;
     }
     
-/* Media Query for Mobile Devices */
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 16px;
-    padding: 0 10px;
-    overflow-x: hidden;
-  }
+@media (max-width: 768px) {
+    .news-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
-  /* News Container */
-  .news-container {
-    padding: 10px;
-    max-width: 100%;
-    overflow-y: auto; /* Allow vertical scrolling if needed */
-  }
+    .news-item {
+        width: 100%;
+        max-height: 100px; /* Collapsed view */
+        overflow: hidden; /* Hide overflowing content initially */
+    }
 
-  /* News List - Stack Vertically */
-  .news-list {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Space between each article */
-  }
+    .news-item.active {
+        max-height: 800px; /* Adjust as needed to allow more content */
+    }
 
-  /* News Item */
-  .news-item {
-    display: block; /* Ensure full-width display */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden; /* Hide any overflow */
-    transition: max-height 0.3s ease-in-out;
-    max-height: 200px; /* Default height, enough for a preview */
-  }
-
-  .news-item.expanded {
-    max-height: 1000px; /* Allow it to expand when clicked */
-  }
-
-  /* News Header */
-  .news-header {
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
-    background-color: #f5f5f5;
-  }
-
-  /* News Image */
-  .news-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* News Content */
-  .news-content {
-    padding: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow-y: auto; /* Allow scrolling if the content is long */
-    max-height: 300px; /* Limit height to make it scrollable */
-  }
-
-  /* Hide non-essential elements */
-  .sidebar, .extra-info {
-    display: none;
-  }
+    .news-content {
+        display: block;
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: 400px; /* Limit the visible content */
+    }
 }
 
   </style>
@@ -436,11 +394,6 @@ function closeNote() {
     document.body.classList.remove('no-scroll'); // Re-enable background scrolling
 }
 
-    document.querySelectorAll('.news-item').forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('expanded');
-  });
-});
 
   </script>
 </body>
