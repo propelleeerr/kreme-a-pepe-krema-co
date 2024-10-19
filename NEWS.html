@@ -266,58 +266,81 @@
     }
     
   /* Media Query for Mobile Devices */
+/* Media Query for Mobile Devices */
 @media screen and (max-width: 768px) {
   body {
-    font-size: 14px; /* Adjust base font size */
-    padding: 10px; /* Add padding to avoid edge-to-edge content */
+    font-size: 14px; /* Adjust base font size for better readability */
+    padding: 0 10px; /* Add horizontal padding for better spacing */
   }
 
-  /* Adjusting the news article section */
+  /* News Container */
   .news-container {
     padding: 10px; /* Space around the container */
-    max-width: 100%; /* Ensure it uses the full width */
+    margin: 0 auto; /* Center the container */
+    max-width: 100%; /* Ensure the container takes up full width */
   }
 
+  /* News Header */
   .news-header {
-    font-size: 20px; /* Adjust header size */
-    text-align: center; /* Center align headers for a balanced look */
-    margin-bottom: 15px; /* Add space below the header */
+    font-size: 22px; /* Slightly larger for prominence */
+    text-align: center; /* Center the headline for better focus */
+    margin: 10px 0 15px; /* Space above and below the header */
+    line-height: 1.2; /* Improved spacing between header lines */
   }
 
+  /* News Image */
   .news-image {
     width: 100%; /* Full width for images */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 15px; /* Space below the image */
+    border-radius: 5px; /* Smooth corners for better visuals */
   }
 
+  /* News Content */
   .news-content {
-    font-size: 14px; /* Smaller font size for better readability */
-    line-height: 1.6; /* Increase line height for readability */
-    margin-bottom: 20px; /* Space between articles */
+    font-size: 15px; /* Adjusted for readability on small screens */
+    line-height: 1.6; /* Improved line spacing */
+    text-align: justify; /* Make content easier to read */
+    margin-bottom: 20px; /* Space below each article */
   }
 
+  /* News Author and Date */
   .news-author, .news-date {
     font-size: 12px; /* Smaller size for metadata */
     margin-bottom: 10px; /* Space below */
-    text-align: center; /* Center align for a unified look */
+    text-align: center; /* Center align for a balanced look */
+    color: #666; /* Lighter color for less emphasis */
   }
 
   /* Adjusting the layout of the news list */
   .news-list {
     display: flex;
     flex-direction: column; /* Stack articles vertically */
-    gap: 15px; /* Space between articles */
+    gap: 20px; /* Space between articles for a cleaner look */
   }
 
-  /* Buttons and links */
+  /* Buttons and Links */
   .read-more-button {
-    width: 100%; /* Full width */
-    padding: 12px; /* Increase padding for easier touch interaction */
+    width: 100%; /* Full width for a more touch-friendly size */
+    padding: 12px 0; /* Increase padding for easier interaction */
     font-size: 14px; /* Adjust font size */
     text-align: center; /* Center text */
     border-radius: 5px; /* Smooth corners */
+    background-color: #007BFF; /* Consistent button color */
+    color: white; /* Text color for better contrast */
+    margin-top: 10px; /* Space above the button */
+  }
+
+  .read-more-button:hover {
+    background-color: #0056b3; /* Darken on hover */
+  }
+
+  /* Hide non-essential elements (if any) */
+  .sidebar, .extra-info {
+    display: none; /* Hide sidebars or extra content */
   }
 }
+
 
   </style>
 </head>
