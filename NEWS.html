@@ -263,6 +263,25 @@
     }
     
 @media (max-width: 768px) {
+   .header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Space below the logo */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start; /* Align buttons to the start */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .button-container a {
+        margin-bottom: 10px; /* Space between buttons */
+    }
+  
     .news-container {
         display: flex;
         flex-direction: column;
