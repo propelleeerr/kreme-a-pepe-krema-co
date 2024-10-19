@@ -471,12 +471,12 @@
 
 @media (max-width: 768px) {
     body {
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 10px; /* Reduced padding for better fit */
     }
 
     .header {
         flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center items */
+        align-items: center; /* Center align items */
     }
 
     .logo-container {
@@ -494,34 +494,33 @@
     }
 
     .contact-section {
-        flex-direction: column; /* Stack sections vertically */
-        align-items: center; /* Center align items */
+        flex-direction: column; /* Stack contact items vertically */
+        align-items: center; /* Center align */
     }
 
     .contact-container {
-        width: 100%; /* Full width for better usability */
-        max-width: 100%; /* Prevent overflow */
+        max-width: 100%; /* Full width on small screens */
+        padding: 20px;
         margin-right: 0; /* Reset margin */
     }
 
     .contact-image {
-        margin-top: 20px; /* Space between contact image and container */
-        flex: 0 0 100%; /* Full width for image */
-        display: flex; /* Center the image */
-        justify-content: center;
+        flex: 0 0 100%; /* Allow image to occupy full width */
+        margin-top: 20px; /* Space above image */
     }
 
     .contact-image img {
-        max-width: 80%; /* Responsive image size */
+        max-width: 80%; /* Responsive image */
         height: auto; /* Maintain aspect ratio */
     }
 
-    .info-item {
-        margin-bottom: 15px; /* Space between info items */
+    .contact-info {
+        grid-template-columns: 1fr; /* Stack info items vertically */
+        gap: 15px; /* Adjust gap for smaller screens */
     }
 
     .contact-form {
-        width: 100%; /* Full width for better usability */
+        width: 100%; /* Full width for contact form */
     }
 
     .contact-form input,
@@ -530,11 +529,11 @@
     }
 
     h2 {
-        font-size: 28px; /* Reduce font size for smaller screens */
+        font-size: 28px; /* Adjust heading size for better visibility */
     }
 
-    h3 {
-        font-size: 20px; /* Reduce size for subheadings */
+    .info-item {
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 }
 
