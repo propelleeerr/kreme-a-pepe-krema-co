@@ -206,32 +206,48 @@
     }
 
     @media (max-width: 768px) {
-    body {
-        padding: 10px; /* Reduce padding for mobile */
-    }
+      .header {
+          flex-direction: column; /* Stack header elements vertically */
+          align-items: flex-start; /* Align items to the start */
+      }
 
-    .header .logo {
-        max-height: 60px; /* Adjust logo size for mobile */
-    }
+      .logo-container {
+          margin-bottom: 10px; /* Space below the logo */
+      }
 
-    .logo-text {
-        font-size: 22px; /* Reduce font size for mobile */
-    }
+      .search-container {
+          width: 100%; /* Full width for the search bar */
+      }
 
-    .search-container input[type="text"] {
-        width: 100%; /* Full-width input on mobile */
-        margin-bottom: 10px; /* Add some margin */
-    }
+      .search-container input[type="text"] {
+          width: 100%; /* Full width for better usability */
+      }
 
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        margin-left: 0; /* Remove left margin */
-    }
+      .button-container {
+          flex-direction: column; /* Stack buttons vertically */
+          align-items: flex-start; /* Align buttons to the start */
+          margin-left: 0; /* Reset margin */
+      }
 
-    .button-container a {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 10px; /* Add bottom margin for spacing */
-    }
+      .button-container a {
+          margin-bottom: 10px; /* Space between buttons */
+      }
+
+      .big-heading {
+          font-size: 36px; /* Reduce font size for smaller screens */
+          margin-left: 0; /* Reset margin */
+          text-align: center; /* Center text */
+      }
+
+      .explore {
+          text-align: center; /* Center the explore text */
+          margin-left: 0; /* Reset margin */
+      }
+
+      .explore-button {
+          margin-left: 0; /* Reset margin */
+          text-align: center; /* Center the button */
+      }
 
     .checkout-table th, .checkout-table td {
         font-size: 12px; /* Smaller font size for table cells */
