@@ -171,9 +171,6 @@
       text-align: center;
     }
 
-  
-
-
     .note-container {
     display: none;
     position: fixed;
@@ -269,25 +266,42 @@
     .news-container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px; /* Space between news items */
+        padding: 10px; /* Padding for container */
     }
 
     .news-item {
-        width: 100%;
-        max-height: 100px; /* Collapsed view */
+        background: #fff; /* White background for better contrast */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: max-height 0.3s ease; /* Smooth transition for expanding */
         overflow: hidden; /* Hide overflowing content initially */
+        cursor: pointer; /* Pointer cursor for clickable items */
     }
 
-    .news-item.active {
-        max-height: 800px; /* Adjust as needed to allow more content */
+    .news-item h3 {
+        padding: 15px; /* Padding for title */
+        margin: 0; /* Remove default margin */
+        font-size: 1.2em; /* Slightly larger font size */
+        color: #333; /* Dark text color */
     }
 
     .news-content {
-        display: block;
-        overflow-y: auto; /* Enable vertical scrolling */
-        max-height: 400px; /* Limit the visible content */
+        padding: 0 15px 15px; /* Padding for content */
+        display: none; /* Hidden by default */
+    }
+
+    .news-item.active .news-content {
+        display: block; /* Show content when active */
+        max-height: 400px; /* Limit height for scrolling */
+        overflow-y: auto; /* Enable scrolling */
+    }
+
+    .news-item.active {
+        max-height: 800px; /* Allow expansion for active items */
     }
 }
+
 
   </style>
 </head>
