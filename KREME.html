@@ -471,69 +471,85 @@
 
 @media (max-width: 768px) {
     body {
-        padding: 10px; /* Reduced padding for better fit */
+        padding: 10px; /* Padding to give some space on the edges */
     }
 
     .header {
         flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center align items */
+        align-items: center; /* Center items */
+        padding: 10px 0; /* Add padding for spacing */
     }
 
     .logo-container {
         margin-bottom: 10px; /* Space below the logo */
     }
 
+    .search-container {
+        width: 100%; /* Full width for the search bar */
+        margin-bottom: 10px; /* Space below the search bar */
+    }
+
+    .search-container input[type="text"] {
+        width: 100%; /* Full width for better usability */
+        padding: 10px; /* Add padding for input */
+        border-radius: 5px; /* Rounded corners for input */
+    }
+
     .button-container {
         flex-direction: column; /* Stack buttons vertically */
         align-items: center; /* Center buttons */
         margin-left: 0; /* Reset margin */
+        margin-top: 10px; /* Space above the button container */
     }
 
     .button-container a {
         margin-bottom: 10px; /* Space between buttons */
+        padding: 10px 20px; /* Padding for buttons */
+        border-radius: 5px; /* Rounded corners for buttons */
+        background-color: #f0f0f0; /* Button background color */
+        text-align: center; /* Center text in buttons */
+        width: 100%; /* Full width buttons */
     }
 
-    .contact-section {
-        flex-direction: column; /* Stack contact items vertically */
-        align-items: center; /* Center align */
+    .menu-item {
+        flex-direction: column; /* Stack menu item elements vertically */
+        align-items: center; /* Center align menu items */
+        margin-bottom: 20px; /* Space below each menu item */
+        padding: 15px; /* Padding for menu items */
+        border: 1px solid #ccc; /* Light border for separation */
+        border-radius: 5px; /* Rounded corners */
+        width: 100%; /* Full width for menu items */
     }
 
-    .contact-container {
-        max-width: 100%; /* Full width on small screens */
-        padding: 20px;
-        margin-right: 0; /* Reset margin */
-    }
-
-    .contact-image {
-        flex: 0 0 100%; /* Allow image to occupy full width */
-        margin-top: 20px; /* Space above image */
-    }
-
-    .contact-image img {
-        max-width: 80%; /* Responsive image */
+    .menu-item img {
+        max-width: 100%; /* Responsive image */
         height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Rounded corners for images */
     }
 
-    .contact-info {
-        grid-template-columns: 1fr; /* Stack info items vertically */
-        gap: 15px; /* Adjust gap for smaller screens */
+    .menu-details {
+        text-align: center; /* Center text in details */
+        margin-top: 10px; /* Space above details */
     }
 
-    .contact-form {
-        width: 100%; /* Full width for contact form */
+    .explore {
+        text-align: center; /* Center the explore text */
+        margin-top: 20px; /* Space above explore section */
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%; /* Full width for inputs */
+    .explore-button {
+        margin-top: 10px; /* Space above explore button */
+        padding: 10px 20px; /* Padding for explore button */
+        background-color: #f0f0f0; /* Button background color */
+        border-radius: 5px; /* Rounded corners */
+        width: 100%; /* Full width for button */
+        text-align: center; /* Center text */
     }
 
     h2 {
-        font-size: 28px; /* Adjust heading size for better visibility */
-    }
-
-    .info-item {
-        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 24px; /* Adjust heading size for better visibility */
+        text-align: center; /* Center headings */
+        margin-bottom: 10px; /* Space below headings */
     }
 }
 
