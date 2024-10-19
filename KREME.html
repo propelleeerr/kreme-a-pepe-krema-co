@@ -479,6 +479,14 @@
         margin-bottom: 10px; /* Space below the logo */
     }
 
+    .search-container {
+        width: 100%; /* Full width for the search bar */
+    }
+
+    .search-container input[type="text"] {
+        width: 100%; /* Full width for better usability */
+    }
+
     .button-container {
         flex-direction: column; /* Stack buttons vertically */
         align-items: flex-start; /* Align buttons to the start */
@@ -490,28 +498,53 @@
     }
 
     .menu-section {
+        display: flex; /* Use flexbox for layout */
         flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center items */
+        align-items: center; /* Center align menu items */
+        padding: 10px; /* Padding for comfort */
+        width: 100%; /* Full width */
     }
 
     .menu-item {
-        width: 100%; /* Full width for menu items */
+        display: flex; /* Use flexbox for items */
+        flex-direction: column; /* Stack item elements vertically */
+        align-items: center; /* Center items */
+        width: 100%; /* Full width for items */
         margin-bottom: 20px; /* Space between items */
+        padding: 10px; /* Padding for item */
+        border: 1px solid #ddd; /* Optional border for emphasis */
+        border-radius: 5px; /* Rounded corners */
     }
 
-    .product-image {
-        width: 100%; /* Full width for product images */
-        max-width: 300px; /* Limit max width */
+    .menu-item img {
+        width: 100%; /* Responsive image */
+        max-width: 200px; /* Limit max width for images */
+        margin: 0 auto; /* Center image */
     }
 
     .product-details {
-        padding: 15px; /* Padding around product details */
-        text-align: center; /* Center text for better readability */
+        text-align: center; /* Center align product details */
+        margin-top: 10px; /* Space above details */
     }
 
-    .cart-button {
-        width: 100%; /* Full width for cart button */
-        margin-top: 10px; /* Space above button */
+    .flavor-selection {
+        display: flex; /* Use flexbox for flavor selection */
+        flex-direction: column; /* Stack flavor options */
+        align-items: center; /* Center align flavors */
+        width: 100%; /* Full width */
+        margin-top: 10px; /* Space above */
+    }
+
+    .add-to-cart-button {
+        width: 100%; /* Full width for button */
+        padding: 10px; /* Padding for button */
+        font-size: 1.2em; /* Adjust font size for visibility */
+        margin-top: 15px; /* Space above button */
+    }
+
+    .cart-drawer {
+        width: 100%; /* Full width for cart drawer */
+        padding: 20px; /* Padding for drawer */
     }
 }
 
