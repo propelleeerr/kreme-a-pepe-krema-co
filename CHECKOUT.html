@@ -206,66 +206,72 @@
     }
 
     @media (max-width: 768px) {
-      .header {
-          flex-direction: column; /* Stack header elements vertically */
-          align-items: flex-start; /* Align items to the start */
-      }
-
-      .logo-container {
-          margin-bottom: 10px; /* Space below the logo */
-      }
-
-      .search-container {
-          width: 100%; /* Full width for the search bar */
-      }
-
-      .search-container input[type="text"] {
-          width: 100%; /* Full width for better usability */
-      }
-
-      .button-container {
-          flex-direction: column; /* Stack buttons vertically */
-          align-items: flex-start; /* Align buttons to the start */
-          margin-left: 0; /* Reset margin */
-      }
-
-      .button-container a {
-          margin-bottom: 10px; /* Space between buttons */
-      }
-
-      .big-heading {
-          font-size: 36px; /* Reduce font size for smaller screens */
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center text */
-      }
-
-      .explore {
-          text-align: center; /* Center the explore text */
-          margin-left: 0; /* Reset margin */
-      }
-
-      .explore-button {
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center the button */
-      }
-
-    .checkout-table th, .checkout-table td {
-        font-size: 12px; /* Smaller font size for table cells */
+    .header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start; /* Align items to the start */
     }
 
-    .checkout-table {
-        font-size: 14px; /* Adjust table font size */
+    .logo-container {
+        margin-bottom: 10px; /* Space below the logo */
     }
 
-    .info-section input, .info-section select {
-        width: 100%; /* Full-width inputs */
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start; /* Align buttons to the start */
+        margin-left: 0; /* Reset margin */
     }
 
-    #confirmOrder {
-        width: 100%; /* Full-width button */
-        padding: 15px; /* Increase padding for easier tapping */
+    .button-container a {
+        margin-bottom: 10px; /* Space between buttons */
+    }
+
+    .cart-overview {
+        flex-direction: column; /* Stack cart items vertically */
+        margin: 0; /* Reset margins */
+        width: 100%; /* Full width for better usability */
+        padding: 10px; /* Add padding for comfort */
+    }
+
+    .cart-item {
+        display: flex; /* Use flex for layout */
+        flex-direction: column; /* Stack item elements vertically */
+        align-items: center; /* Center-align items */
+        width: 100%; /* Full width for items */
+        margin-bottom: 15px; /* Space between items */
+        padding: 10px; /* Padding for cart items */
+        border: 1px solid #ddd; /* Optional border for emphasis */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    .cart-item img {
+        width: 100%; /* Responsive image */
+        max-width: 150px; /* Limit max width for images */
+        margin: 0 auto; /* Center image */
+    }
+
+    .cart-summary {
+        margin-top: 20px; /* Space above summary */
+        text-align: center; /* Center-align summary */
+    }
+
+    .summary-label {
+        font-size: 1.2em; /* Adjust font size */
+        margin-bottom: 5px; /* Space below label */
+    }
+
+    .special-instructions {
+        width: 100%; /* Full width for the instructions textbox */
+        margin-top: 10px; /* Space above textbox */
+    }
+
+    .checkout-button {
+        width: 100%; /* Full width for checkout button */
+        padding: 10px; /* Padding for button */
+        font-size: 1.2em; /* Adjust font size for visibility */
+        margin-top: 15px; /* Space above button */
     }
 }
+
   </style>
 </head>
 <body>
