@@ -263,13 +263,10 @@
     }
     
 @media (max-width: 768px) {
-    /* Header Styles */
     .header {
         flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center align items */
-        padding: 10px; /* Add padding for better spacing */
-        background-color: #333; /* Dark background for contrast */
-        color: #fff; /* White text color */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px; /* Optional: add padding for better spacing */
     }
 
     .logo-container {
@@ -278,31 +275,30 @@
 
     .search-container {
         width: 100%; /* Full width for the search bar */
-        margin-bottom: 10px; /* Space below the search bar */
     }
 
     .search-container input[type="text"] {
         width: 100%; /* Full width for better usability */
-        padding: 10px; /* Padding for the input field */
-        border: none; /* Remove default border */
-        border-radius: 5px; /* Rounded corners */
+        padding: 10px; /* Padding for input for better usability */
+        border-radius: 5px; /* Optional: rounded corners */
+        border: 1px solid #ccc; /* Optional: border for input */
     }
 
     .button-container {
         flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center align buttons */
+        align-items: flex-start; /* Align buttons to the start */
         margin-left: 0; /* Reset margin */
     }
 
     .button-container a {
         margin-bottom: 10px; /* Space between buttons */
-        color: #fff; /* White text color for links */
+        color: #333; /* Button text color */
         text-decoration: none; /* Remove underline */
     }
 
     .big-heading {
-        font-size: 28px; /* Reduce font size for smaller screens */
-        margin: 0; /* Reset margin */
+        font-size: 36px; /* Reduce font size for smaller screens */
+        margin-left: 0; /* Reset margin */
         text-align: center; /* Center text */
     }
 
@@ -315,11 +311,9 @@
         margin-left: 0; /* Reset margin */
         text-align: center; /* Center the button */
     }
-
-    /* News Container Styles */
     .news-container {
         display: flex;
-        flex-direction: column; /* Stack news items vertically */
+        flex-direction: column;
         gap: 15px; /* Space between news items */
         padding: 10px; /* Padding for container */
     }
@@ -355,8 +349,6 @@
         max-height: 800px; /* Allow expansion for active items */
     }
 }
-
-
   </style>
 </head>
 <body>
