@@ -123,7 +123,7 @@
 
     .news-container {
       display: grid;
-      grid-template-columns: repeat(4, 2fr);
+      grid-template-columns: repeat(3, 2fr);
       gap: 20px;
       margin-top: 20px;
     }
@@ -141,9 +141,10 @@
     }
 
     .news-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
+      width: 100%; /* Responsive width */
+      max-height: 450px; /* Maximum height to contain the images */
+      object-fit: cover; /* Cover the area without distortion */
+      border-radius: 5px; /* Optional: rounded corners */
     }
 
     .news-title {
@@ -171,37 +172,55 @@
     }
 
     @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  body {
+    padding: 10px; /* Reduce padding on mobile */
+  }
 
-      .logo-container {
-        margin-bottom: 10px;
-      }
+  .logo-container {
+    flex-direction: column; /* Stack logo and text vertically */
+    align-items: center; /* Center logo and text */
+  }
 
-      .search-container {
-        width: 100%;
-      }
+  .logo-text {
+    font-size: 24px; /* Adjust logo text size */
+  }
 
-      .search-container input[type="text"] {
-        width: 100%;
-      }
+  .search-container {
+    width: 100%; /* Full width on mobile */
+    margin-top: 10px; /* Add margin for spacing */
+  }
 
-      .button-container {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
-      }
+  .search-container input[type="text"] {
+    width: 100%; /* Full width input on mobile */
+    font-size: 14px; /* Adjust font size */
+  }
 
-      .button-container a {
-        margin-bottom: 10px;
-      }
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to start */
+  }
 
-      .news-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+  .button-container a {
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  .news-container {
+    grid-template-columns: 1fr; /* Single column for news items */
+  }
+
+  .news-item {
+    padding: 10px; /* Less padding on news items */
+  }
+
+  .note-container {
+    width: 90%; /* Responsive width for notes */
+  }
+
+  .close-button {
+    font-size: 1.2em; /* Make close button easier to tap */
+  }
+}
+
 
     .note-container {
     display: none;
@@ -216,18 +235,20 @@
     z-index: 1000;
     width: 80%;
     max-width: 550px;
-    height: 400px; /* Set a specific height */
+    height: 500px; /* Set a specific height */
     overflow-y: auto; /* Add vertical scroll if content exceeds height */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
     #noteImage {
     width: 800%; /* Adjust this value to make the image smaller or larger */
-    max-width: 300px; /* Optional: set a maximum width */
+    max-width: 500px; /* Optional: set a maximum width */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image */
     display: block; /* Center alignment */
     border-radius: 5px; /* Optional: rounded corners */
+    object-fit: cover;
+    
 }
 
     #noteDescription {
@@ -304,10 +325,11 @@
       <button>
         <i class="fas fa-search"></i>
       </button>
-      <a href="CHECKOUT.html" class="cart-button">
+      <a href="KREME.html" class="cart-button">
         <i class="fas fa-shopping-cart"></i>
       </a>
     </div>
+  </div>
   </header>
 
   <div class="button-container">
@@ -315,7 +337,6 @@
       <i class="fas fa-home"></i> Home
     </a>
     <a href="ABOUT.html">About us</a>
-    <a href="STORY.html">Our story</a>
     <a href="KREME.html">Menu</a>
     <a href="NEWS.html">News</a>
     <a href="CONTACT.html">Contact us</a>
@@ -332,29 +353,40 @@
       <div class="news-date">September 12, 2024</div>
       <p>A New Beginning!<br>The Start of Kreme-a-Pepe</p>
     </div>
-    <div class="news-item" onclick="openNote('Special Discount', 'news/news2.jpg', 'Enjoy a 20% discount on all orders this week!')">
-      <img src="news/news2.jpg" alt="News 2" />
-      <div class="news-title">Special Discount</div>
-      <div class="news-date">September 11, 2024</div>
-      <p>Enjoy a 20% discount on all orders this week!</p>
+
+    <div class="news-item" onclick="openNote('Krema Co. on Instagram (@Krema Co.)!', 'pictures/LOGO.png', 'Connecting you to innovative food, worldwide!', 'On October 0, 2024, the social media team of Krema Co., led by Naina Liza Rae V. Abainza (Social Media Manager), launched the official Instagram page. This exciting new platform will showcase our delicious products, share behind-the-scenes content, and connect with our community. Follow us for the latest updates, promotions, and mouthwatering visuals that celebrate the essence of Kreme-a-Pepe!')">
+      <img src="pictures/LOGO.png" alt="News 2" />
+      <div class="news-title">@KremaCo.</div>
+      <div class="news-date">October 0, 2024</div>
+      <p>Launch of Kreme-a-Pepe's Official Instagram Page</p>
     </div>
-    <div class="news-item" onclick="openNote('New Dessert Launch', 'news/news3.jpg', 'Check out our new dessert menu featuring delicious treats!')">
-      <img src="news/news3.jpg" alt="News 3" />
-      <div class="news-title">New Dessert Launch</div>
-      <div class="news-date">September 10, 2024</div>
-      <p>Check out our new dessert menu featuring delicious treats!</p>
+
+    <div class="news-item" onclick="openNote('Official Website of Krema Co.', 'pictures/LOGO.png', 'One-click away to experience the extraordinary flavors of Kreme-a-Pepe!', 'On October 0, 2024, Kreme-a-Pepe proudly launched our revamped website, created by Ydda Lauren A. Nogra (Head of Marketing and Advertising), designed to enhance your shopping experience. This exciting platform features an intuitive menu showcasing our delectable offerings, easy navigation, and a seamless checkout process. Stay tuned for exclusive promotions and updates as we continue to delight your taste buds and connect with our beloved community!')">
+      <img src="pictures/LOGO.png" alt="News 3" />
+      <div class="news-title">Official Website of Kreme-a-Pepe</div>
+      <div class="news-date">October 0, 2024</div>
+      <p>Launch of Kreme-a-Pepe's Official Website</p>
     </div>
-    <div class="news-item" onclick="openNote('Food Festival', 'news/news4.jpg', 'Join us for the food festival this weekend!')">
-      <img src="news/news4.jpg" alt="News 4" />
+
+    <div class="news-item" onclick="openNote('Bringing Kreme-a-Pepe to life!', 'pictures/LOGO.png', 'Proving a groundbreaking, innovative product just for you!', 'On November 0, 2024, Kreme-a-Pepe, led by our Head Chef Krizteffe Marie S. Nieves, proudly began creating our product. With insights from Food Critic Katrina Sofia Joson and the innovative mind of Product Innovator and Cultural Consultant Marthanello Llovido, each item is crafted to showcase innovative flavors and high-quality ingredients. Ingredients are thoughtfully provided through the connections of our Chief Supply Chain Officer and Head of Supply Chain, Eluinah Jowelle C. Pagao, and transported by our Chief Operating Officer and Head of Logistics, Laura Juliana M. Yulo. Every creation is approved by our Chief Executive Officer, Jillian Bernice Laviste, ensuring excellence in every bite. Discover our menu and stay tuned for exclusive promotions as we celebrate the artistry of baking and our passion for food!')">
+      <img src="pictures/LOGO.png" alt="News 4" />
+      <div class="news-title">Creating Kreme-a-Pepe</div>
+      <div class="news-date">November 0, 2024</div>
+      <p>See how it's made!</p>
+    </div>
+
+    <div class="news-item" onclick="openNote('Setting up Krema Co.', 'pictures/LOGO.png', 'Setting up for your exciting experience at the Kreme-a-Pepe booth!', 'On November 0, 2024, Krema Co. started the setup of our booth in preparation for the upcoming bazaar at Saint Joseph School. Our team is excited to create an inviting space that showcases our innovative offerings. We’re committed to delivering an engaging experience for all attendees, transforming our booth into a vibrant hub of deliciousness where you can taste our unique products and connect with the Kreme-a-Pepe community!')">
+      <img src="pictures/LOGO.png" alt="News 4" />
+      <div class="news-title">Krema Co. Setup</div>
+      <div class="news-date">November 9, 2024</div>
+      <p>See us prepare for the showcase of Kreme-a-Pepe</p>
+    </div>
+
+    <div class="news-item" onclick="openNote('Food Festival', 'pictures/LOGO.png', 'Join us for the food festival this November 0, 2024!', 'On November 0, 2024, we welcome the opening of the bazaar, where Krema Co. is thrilled to showcase our delectable offerings. With all the teachers, students, and investors present, our team is fully prepared to deliver an unforgettable experience. We have meticulously arranged our booth, set up vibrant displays, and prepared products that will surely satisfy your taste buds. Our team is ready to engage with the community, providing insights into our innovative products while ensuring a warm and welcoming atmosphere. Join us as we celebrate the flavors of Kreme-a-Pepe and connect with our community!')">
+      <img src="pictures/LOGO.png" alt="News 4" />
       <div class="news-title">Food Festival</div>
-      <div class="news-date">September 9, 2024</div>
-      <p>Join us for the food festival this weekend!</p>
-    </div>
-    <div class="news-item" onclick="openNote('Food Festival', 'news/news4.jpg', 'Join us for the food festival this weekend!')">
-      <img src="news/news4.jpg" alt="News 4" />
-      <div class="news-title">Food Festival</div>
-      <div class="news-date">September 9, 2024</div>
-      <p>Join us for the food festival this weekend!</p>
+      <div class="news-date">November 0, 2024</div>
+     <p>Join us for the food festival this Novemebr 0, 2024!</p>
     </div>
   </div>
 
