@@ -469,28 +469,52 @@
     margin-top: 10px; /* Space between button and any following text */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start; /* Align items to the start */
     }
+
+    .logo-container {
+        margin-bottom: 10px; /* Space below the logo */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start; /* Align buttons to the start */
+        margin-left: 0; /* Reset margin */
+    }
+
+    .button-container a {
+        margin-bottom: 10px; /* Space between buttons */
+    }
+
     .menu-section {
-        flex-direction: column;
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center items */
     }
+
     .menu-item {
-        flex-direction: column; /* Stack image and info vertically */
-        align-items: center; /* Center align */
+        width: 100%; /* Full width for menu items */
+        margin-bottom: 20px; /* Space between items */
     }
-    .menu-image {
-        max-width: 100%;
-        margin: 0; /* Remove margins */
+
+    .product-image {
+        width: 100%; /* Full width for product images */
+        max-width: 300px; /* Limit max width */
     }
-    .menu-info {
-        max-width: 100%; /* Use full width */
-        padding: 0; /* Reset padding */
-        text-align: center; /* Center text */
+
+    .product-details {
+        padding: 15px; /* Padding around product details */
+        text-align: center; /* Center text for better readability */
+    }
+
+    .cart-button {
+        width: 100%; /* Full width for cart button */
+        margin-top: 10px; /* Space above button */
     }
 }
+
 
   </style>
 </head>
