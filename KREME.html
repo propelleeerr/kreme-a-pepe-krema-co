@@ -458,45 +458,71 @@
     }
 
     .logo-container {
-        margin-bottom: 10px; /* Space below the logo */
+        margin-bottom: 10px; /* Space below logo for clarity */
+    }
+
+    .search-container input[type="text"] {
+        width: 100%; /* Full width on smaller screens */
     }
 
     .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: flex-start; /* Align buttons to the start */
-        margin-left: 0; /* Reset margin */
+        margin-left: 0; /* Center align buttons */
+        margin-top: 10px; /* Space above buttons */
     }
 
-    .button-container a {
-        margin-bottom: 10px; /* Space between buttons */
+    .menu-image {
+        margin-top: 20px; /* Reduced space for images */
+        margin-left: 0; /* No left margin */
+        margin-right: 0; /* No right margin */
+        height: 300px; /* Adjust height for smaller screens */
     }
 
-    .menu-section {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: center; /* Center items */
+    .menu-title {
+        font-size: 30px; /* Smaller title size */
     }
 
-    .menu-item {
-        width: 100%; /* Full width for menu items */
-        margin-bottom: 20px; /* Space between items */
+    .menu-description {
+        font-size: 14px; /* Smaller description size */
+        margin-right: 0; /* No right margin */
     }
 
-    .product-image {
-        width: 100%; /* Full width for product images */
-        max-width: 300px; /* Limit max width */
+    .choices select {
+        font-size: 12px; /* Smaller font for selects */
     }
 
-    .product-details {
-        padding: 15px; /* Padding around product details */
-        text-align: center; /* Center text for better readability */
+    .add-to-cart {
+        width: 100%; /* Full width button */
     }
 
-    .cart-button {
-        width: 100%; /* Full width for cart button */
-        margin-top: 10px; /* Space above button */
+    .cart-drawer {
+        width: 80%; /* Wider drawer on small screens */
+        right: -80%; /* Adjust for width change */
     }
 }
 
+/* Further responsive adjustments for very small screens */
+@media (max-width: 480px) {
+    .menu-title {
+        font-size: 24px; /* Even smaller title size */
+    }
+
+    .menu-description {
+        font-size: 12px; /* Even smaller description size */
+    }
+
+    .add-to-cart {
+        padding: 8px; /* Adjust padding for small screens */
+    }
+
+    .cart-drawer {
+        width: 95%; /* Full width drawer on very small screens */
+        right: -95%; /* Adjust for full width */
+    }
+
+    .header {
+        padding: 5px; /* Reduced padding for header */
+    }
+}
 
   </style>
 </head>
