@@ -206,72 +206,66 @@
     }
 
     @media (max-width: 768px) {
-    .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: flex-start; /* Align items to the start */
+      .header {
+          flex-direction: column; /* Stack header elements vertically */
+          align-items: flex-start; /* Align items to the start */
+      }
+
+      .logo-container {
+          margin-bottom: 10px; /* Space below the logo */
+      }
+
+      .search-container {
+          width: 100%; /* Full width for the search bar */
+      }
+
+      .search-container input[type="text"] {
+          width: 100%; /* Full width for better usability */
+      }
+
+      .button-container {
+          flex-direction: column; /* Stack buttons vertically */
+          align-items: flex-start; /* Align buttons to the start */
+          margin-left: 0; /* Reset margin */
+      }
+
+      .button-container a {
+          margin-bottom: 10px; /* Space between buttons */
+      }
+
+      .big-heading {
+          font-size: 36px; /* Reduce font size for smaller screens */
+          margin-left: 0; /* Reset margin */
+          text-align: center; /* Center text */
+      }
+
+      .explore {
+          text-align: center; /* Center the explore text */
+          margin-left: 0; /* Reset margin */
+      }
+
+      .explore-button {
+          margin-left: 0; /* Reset margin */
+          text-align: center; /* Center the button */
+      }
+
+    .checkout-table th, .checkout-table td {
+        font-size: 12px; /* Smaller font size for table cells */
     }
 
-    .logo-container {
-        margin-bottom: 10px; /* Space below the logo */
+    .checkout-table {
+        font-size: 14px; /* Adjust table font size */
     }
 
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: flex-start; /* Align buttons to the start */
-        margin-left: 0; /* Reset margin */
+    .info-section input, .info-section select {
+        width: 100%; /* Full-width inputs */
     }
 
-    .button-container a {
-        margin-bottom: 10px; /* Space between buttons */
-    }
-
-    .cart-overview {
-        flex-direction: column; /* Stack cart items vertically */
-        margin: 0; /* Reset margins */
-        width: 100%; /* Full width for better usability */
-        padding: 10px; /* Add padding for comfort */
-    }
-
-    .cart-item {
-        display: flex; /* Use flex for layout */
-        flex-direction: column; /* Stack item elements vertically */
-        align-items: center; /* Center-align items */
-        width: 100%; /* Full width for items */
-        margin-bottom: 15px; /* Space between items */
-        padding: 10px; /* Padding for cart items */
-        border: 1px solid #ddd; /* Optional border for emphasis */
-        border-radius: 5px; /* Rounded corners */
-    }
-
-    .cart-item img {
-        width: 100%; /* Responsive image */
-        max-width: 150px; /* Limit max width for images */
-        margin: 0 auto; /* Center image */
-    }
-
-    .cart-summary {
-        margin-top: 20px; /* Space above summary */
-        text-align: center; /* Center-align summary */
-    }
-
-    .summary-label {
-        font-size: 1.2em; /* Adjust font size */
-        margin-bottom: 5px; /* Space below label */
-    }
-
-    .special-instructions {
-        width: 100%; /* Full width for the instructions textbox */
-        margin-top: 10px; /* Space above textbox */
-    }
-
-    .checkout-button {
-        width: 100%; /* Full width for checkout button */
-        padding: 10px; /* Padding for button */
-        font-size: 1.2em; /* Adjust font size for visibility */
-        margin-top: 15px; /* Space above button */
+    #confirmOrder {
+        width: 100%; /* Full-width button */
+        padding: 15px; /* Increase padding for easier tapping */
     }
 }
-
   </style>
 </head>
 <body>
@@ -303,6 +297,8 @@
     <h1>Checkout</h1>
   </div>
 
+<form action="https://formspree.io/f/mqakkrov" method="POST">
+
   <div class="checkout-container">
     <h2>Cart Overview</h2>
     <table class="checkout-table">
@@ -321,10 +317,13 @@
 
     <div class="special-instructions">
       <label for="specialInstructions">Special Instructions:</label>
-      <textarea id="specialInstructions" readonly></textarea>
+      <textarea id="specialInstructions" oninput="updateSpecialInstructionsField()"></textarea>
     </div>
+    
+    <input type="hidden" id="specialInstructionsField" name="specialInstructions" value="">
+    
+    
 
-<form action="https://formspree.io/f/mqakkrov" method="POST">
     <div class="info-section">
         <h3>Personal Information</h3>
         <label for="name">Name:</label>
@@ -366,52 +365,79 @@
         <label for="country">Country:</label>
         <input type="text" name="customer_country" id="country" value="Philippines" readonly>
     </div>
+    
 
+    <input type="hidden" name="cart_details" id="cartDetailsField">
     <input type="submit" id="confirmOrder" value="Confirm Order">
+    <input type="hidden" id="specialInstructionsField" name="specialInstructions" value="">
+
 </form>
 
 
   <script>
     window.onload = function() {
-        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-        const instructions = localStorage.getItem("specialInstructions") || '';
-        renderCheckout(cartItems, instructions);
-    };
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const instructions = localStorage.getItem("specialInstructions") || '';
+    renderCheckout(cartItems, instructions);
+};
 
-    function renderCheckout(cartItems, instructions) {
-        const checkoutItemsContainer = document.getElementById('checkoutItemsContainer');
-        checkoutItemsContainer.innerHTML = '';
+function renderCheckout(cartItems, instructions) {
+    const checkoutItemsContainer = document.getElementById('checkoutItemsContainer');
+    checkoutItemsContainer.innerHTML = '';
 
-        if (cartItems.length === 0) {
-            checkoutItemsContainer.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
-            document.getElementById('subtotal').innerText = 'Subtotal: ₱0.00';
-            return;
-        }
-
-        // Log the cartItems to see their structure
-        console.log(cartItems);
-
-        cartItems.forEach(item => {
-            const itemRow = document.createElement('tr');
-            itemRow.innerHTML = `
-                <td>${item.name || "N/A"}</td>
-                <td>₱${(item.price || 0).toFixed(2)}</td>
-                <td>${item.size || "N/A"}</td>
-                <td>${item.flavor || "N/A"}</td>
-                <td>${item.quantity || 0}</td>
-            `;
-            checkoutItemsContainer.appendChild(itemRow);
-        });
-
-        const total = cartItems.reduce((sum, item) => {
-            const price = item.price || 0; // Default to 0 if undefined
-            const quantity = item.quantity || 0; // Default to 0 if undefined
-            return sum + (price * quantity);
-        }, 0);
-        
-        document.getElementById('subtotal').innerText = `Subtotal: ₱${total.toFixed(2)}`;
-        document.getElementById('specialInstructions').value = instructions;
+    if (cartItems.length === 0) {
+        checkoutItemsContainer.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
+        document.getElementById('subtotal').innerText = 'Subtotal: ₱0.00';
+        document.getElementById('cartDetailsField').value = ''; // Clear the hidden field if cart is empty
+        document.getElementById('specialInstructionsField').value = instructions; // Display instructions
+        return;
     }
+
+    // Calculate subtotal
+    let subtotal = 0;
+
+    cartItems.forEach(item => {
+        const itemRow = document.createElement('tr');
+        itemRow.innerHTML = `
+            <td>${item.name || "N/A"}</td>
+            <td>₱${(item.price || 0).toFixed(2)}</td>
+            <td>${item.size || "N/A"}</td>
+            <td>${item.flavor || "N/A"}</td>
+            <td>${item.quantity || 0}</td>
+        `;
+        checkoutItemsContainer.appendChild(itemRow);
+        
+        // Calculate subtotal for each item
+        subtotal += (item.price || 0) * (item.quantity || 0);
+    });
+
+    document.getElementById('subtotal').innerText = `Subtotal: ₱${subtotal.toFixed(2)}`;
+
+    // Format cart details
+    const formattedCartDetails = cartItems.map(item => ({
+        name: item.name,
+        flavor: item.flavor,
+        quantity: item.quantity,
+        price: item.price.toFixed(2) // Ensuring price is in a readable format
+    }));
+
+    // Update the hidden field with formatted cart details
+    document.getElementById('cartDetailsField').value = JSON.stringify(formattedCartDetails);
+
+    // Display special instructions
+    document.getElementById('specialInstructionsField').value = instructions; // Ensure this field exists
+}
+
+// Call this function when the form is submitted
+document.querySelector('form').onsubmit = function() {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const instructions = localStorage.getItem("specialInstructions") || ''; // Get special instructions
+
+    // Update hidden fields for Formspree
+    document.getElementById('cartDetailsField').value = JSON.stringify(cartItems);
+    document.getElementById('specialInstructionsField').value = instructions; // Ensure this field exists
+};
+
 
     // Load the provinces, cities, and barangays
     const provinces = {
@@ -535,24 +561,23 @@
 
 // Get references to form fields and the confirm order button
 const emailInput = document.getElementById('email');
-const orderInstructionsInput = document.getElementById('orderInstructions');
 const countrySelect = document.getElementById('country');
 const provinceSelect = document.getElementById('province');
 const cityInput = document.getElementById('city');
 const barangayInput = document.getElementById('barangay');
 const confirmOrderButton = document.getElementById('confirmOrderButton');
+const specialInstructionsField = document.getElementById('specialInstructionsField');
 
 // Function to check if all fields are filled
 function checkFields() {
     const emailValid = emailInput.value.includes('@gmail.com') || emailInput.value.includes('@yahoo.com');
-    const orderInstructionsFilled = orderInstructionsInput.value.trim() !== '';
     const countrySelected = countrySelect.value !== '';
     const provinceSelected = provinceSelect.value !== '';
     const cityFilled = cityInput.value.trim() !== '';
     const barangayFilled = barangayInput.value.trim() !== '';
 
     // Enable the button if all fields are filled
-    confirmOrderButton.disabled = !(emailValid && orderInstructionsFilled && countrySelected && provinceSelected && cityFilled && barangayFilled);
+    confirmOrderButton.disabled = !(emailValid && countrySelected && provinceSelected && cityFilled && barangayFilled);
 }
 
 // Function to handle order confirmation
@@ -567,6 +592,16 @@ function handleOrderConfirmation(event) {
     }
 }
 
+const hiddenItemsContainer = document.getElementById('hiddenItems');
+    hiddenItemsContainer.innerHTML = cartItems.map(item => `
+      <input type="hidden" name="products[]" value="${item.name}">
+      <input type="hidden" name="prices[]" value="₱${(item.price * item.quantity).toFixed(2)}">
+      <input type="hidden" name="purchaseOptions[]" value="${item.purchaseOption}">
+      <input type="hidden" name="flavors[]" value="${item.flavor}">
+      <input type="hidden" name="quantities[]" value="${item.quantity}">
+    `).join('') + `
+      <input type="hidden" name="subtotal" value="₱${subtotal.toFixed(2)}">
+    `;
 
 // Function to validate required fields
 function validateFields() {
@@ -578,10 +613,9 @@ function validateFields() {
     const city = document.getElementById('city').value; 
     const barangay = document.getElementById('barangay').value; 
     const postalCode = document.getElementById('postalCode').value; 
-    const specialInstructions = document.getElementById('specialInstructions').value;
 
     // Check if any of the fields are empty
-    if (!email || !name || !phone || !address || !province || !city || !barangay || !postalCode || !specialInstructions) {
+    if (!email || !name || !phone || !address || !province || !city || !barangay || !postalCode) {
         alert('Please fill in all required fields before confirming your order!');
         return false; // Indicate validation failure
     }
@@ -594,6 +628,11 @@ function validateFields() {
     }
 
     return true; // Indicate validation success
+}
+
+function updateSpecialInstructionsField() {
+    const instructions = document.getElementById('specialInstructions').value;
+    document.getElementById('specialInstructionsField').value = instructions;
 }
 
 // Event listener for the Confirm Order button
