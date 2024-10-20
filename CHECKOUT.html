@@ -205,7 +205,7 @@
       border-radius: 4px;
     }
 
-    @media (max-width: 768px) {
+     @media (max-width: 768px) {
       .header {
           flex-direction: column; /* Stack header elements vertically */
           align-items: flex-start; /* Align items to the start */
@@ -233,39 +233,27 @@
           margin-bottom: 10px; /* Space between buttons */
       }
 
-      .big-heading {
-          font-size: 36px; /* Reduce font size for smaller screens */
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center text */
+      .checkout-table th, .checkout-table td {
+          font-size: 12px; /* Smaller font size for table cells */
       }
 
-      .explore {
-          text-align: center; /* Center the explore text */
-          margin-left: 0; /* Reset margin */
+      .checkout-table {
+          font-size: 14px; /* Adjust table font size */
       }
 
-      .explore-button {
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center the button */
+      .info-section input, .info-section select {
+          width: 100%; /* Full-width inputs */
       }
 
-    .checkout-table th, .checkout-table td {
-        font-size: 12px; /* Smaller font size for table cells */
-    }
+      #confirmOrder {
+          width: 100%; /* Full-width button */
+          padding: 15px; /* Increase padding for easier tapping */
+      }
 
-    .checkout-table {
-        font-size: 14px; /* Adjust table font size */
+      .special-instructions textarea {
+          height: 80px; /* Increase height for textarea on smaller screens */
+      }
     }
-
-    .info-section input, .info-section select {
-        width: 100%; /* Full-width inputs */
-    }
-
-    #confirmOrder {
-        width: 100%; /* Full-width button */
-        padding: 15px; /* Increase padding for easier tapping */
-    }
-}
   </style>
 </head>
 <body>
