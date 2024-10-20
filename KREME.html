@@ -452,77 +452,53 @@
 }
 
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: flex-start; /* Align items to the start */
+    /* Hide images for smaller screens */
+    .menu-image {
+        display: none; /* Hides the image */
     }
 
-    .logo-container {
-        margin-bottom: 10px; /* Space below logo for clarity */
-    }
-
-    .search-container input[type="text"] {
-        width: 100%; /* Full width on smaller screens */
+    /* Adjusting title and description styles */
+    .menu-title,
+    .menu-description {
+        margin: 0; /* Remove margins */
+        padding: 0; /* Remove padding */
+        font-size: 18px; /* Adjust font size as needed */
+        text-align: center; /* Center align the text */
     }
 
     .button-container {
-        margin-left: 0; /* Center align buttons */
-        margin-top: 10px; /* Space above buttons */
-    }
-
-    .menu-image {
-        margin-top: 20px; /* Reduced space for images */
-        margin-left: 0; /* No left margin */
-        margin-right: 0; /* No right margin */
-        height: 300px; /* Adjust height for smaller screens */
-    }
-
-    .menu-title {
-        font-size: 30px; /* Smaller title size */
-    }
-
-    .menu-description {
-        font-size: 14px; /* Smaller description size */
-        margin-right: 0; /* No right margin */
-    }
-
-    .choices select {
-        font-size: 12px; /* Smaller font for selects */
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+        margin: 10px 0; /* Space above and below buttons */
     }
 
     .add-to-cart {
-        width: 100%; /* Full width button */
+        width: 100%; /* Full width for the button */
+        padding: 12px; /* Adjust padding */
+        font-size: 16px; /* Larger font for better visibility */
     }
 
     .cart-drawer {
-        width: 80%; /* Wider drawer on small screens */
-        right: -80%; /* Adjust for width change */
+        width: 100%; /* Full width for the cart drawer */
+        right: 0; /* Ensure it opens fully */
     }
 }
 
-/* Further responsive adjustments for very small screens */
 @media (max-width: 480px) {
+    /* Further adjustments for very small screens */
     .menu-title {
-        font-size: 24px; /* Even smaller title size */
+        font-size: 16px; /* Adjust title size */
     }
 
     .menu-description {
-        font-size: 12px; /* Even smaller description size */
+        font-size: 14px; /* Adjust description size */
     }
 
     .add-to-cart {
-        padding: 8px; /* Adjust padding for small screens */
-    }
-
-    .cart-drawer {
-        width: 95%; /* Full width drawer on very small screens */
-        right: -95%; /* Adjust for full width */
-    }
-
-    .header {
-        padding: 5px; /* Reduced padding for header */
+        padding: 10px; /* Smaller padding for smaller screens */
     }
 }
+
 
   </style>
 </head>
