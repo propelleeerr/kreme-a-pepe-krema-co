@@ -421,28 +421,7 @@
     font-size: 1.2rem; /* Size of the icons */
 }
 
-/* Styling for the order instructions label */
-.instruction-label {
-    cursor: pointer;
-    color: #333; /* Darker gray for better visibility */
-    font-size: 1.2em; /* Slightly larger font size for emphasis */
-    margin-bottom: 10px; /* Space between label and textarea */
-    font-weight: bold; /* Makes it stand out */
-}
 
-/* Styling for the textarea */
-#instructions {
-    width: 90%; /* Full width for the textbox */
-    height: 80px; /* Adjust height as needed */
-    padding: 10px; /* Inner padding for comfort */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1em; /* Consistent font size */
-    resize: none; /* Prevent resizing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: 'Outfit', sans-serif;
-    margin-top: 8px;
-}
 
 /* Styling for the checkout section */
 .checkout-section {
@@ -623,28 +602,13 @@
             <h4 id="totalAmount">Total: ₱0.00</h4>
         </div>
   
-        <div class="instruction-section">
-          <label class="instruction-label" for="instructions">Order Special Instructions:</label>
-          <textarea id="instructions" rows="4" placeholder="Type your special requests here..."></textarea>
-      </div>
-      
-  
         <div class="checkout-section">
             <button onclick="proceedToCheckout()">Checkout</button>
         </div>
       </div>
   
       <script>
-    function toggleInstructions() {
-        const instructionsTextarea = document.getElementById('instructions');
-        if (instructionsTextarea.style.display === 'none') {
-            instructionsTextarea.style.display = 'block'; // Show the textarea
-            instructionsTextarea.focus(); // Focus on the textarea
-        } else {
-            instructionsTextarea.style.display = 'none'; // Hide the textarea
-        }
-    }
-
+    
 
         function updatePrice() {
             const sizeSelect = document.getElementById("size");
@@ -760,11 +724,10 @@
         }
   
         function proceedToCheckout() {
-            const instructions = document.getElementById("instructions").value;
-            localStorage.setItem("cartItems", JSON.stringify(cartItems));
-            localStorage.setItem("specialInstructions", instructions);
-            window.location.href = "CHECKOUT.html"; // Navigate to checkout page
-        }
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.location.href = "CHECKOUT.html"; // Navigate to checkout page
+}
+
       </script>
       <div class="overlay" id="overlay"></div>
   </body>
