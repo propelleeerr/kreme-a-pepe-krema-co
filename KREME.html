@@ -440,6 +440,8 @@
     font-size: 1em; /* Consistent font size */
     resize: none; /* Prevent resizing */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Outfit', sans-serif;
+    margin-top: 8px;
 }
 
 /* Styling for the checkout section */
@@ -452,6 +454,7 @@
 .checkout-section button {
     background-color: #494538; /* Green color */
     color: white;
+    font-family: 'Outfit', sans-serif;
     border: none;
     padding: 12px 24px; /* More padding for a bigger button */
     border-radius: 4px; /* Rounded corners */
@@ -470,98 +473,51 @@
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 15px; /* Increased padding for better spacing */
-        font-size: 16px; /* Slightly larger font for readability */
-    }
-
     .header {
         flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center items */
-        padding: 15px 0; /* More padding for spacing */
+        align-items: flex-start; /* Align items to the start */
     }
 
     .logo-container {
-        margin-bottom: 15px; /* Increased space below the logo */
-    }
-
-    .search-container {
-        width: 100%; /* Full width for the search bar */
-        margin-bottom: 15px; /* Space below the search bar */
-    }
-
-    .search-container input[type="text"] {
-        width: 100%; /* Full width for better usability */
-        padding: 12px; /* Increased padding for input */
-        border-radius: 5px; /* Rounded corners for input */
-        font-size: 16px; /* Increased font size for better readability */
+        margin-bottom: 10px; /* Space below the logo */
     }
 
     .button-container {
         flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons */
-        margin-top: 15px; /* Space above the button container */
+        align-items: flex-start; /* Align buttons to the start */
+        margin-left: 0; /* Reset margin */
     }
 
     .button-container a {
-        margin-bottom: 15px; /* Increased space between buttons */
-        padding: 12px 20px; /* Increased padding for buttons */
-        border-radius: 5px; /* Rounded corners for buttons */
-        background-color: #f0f0f0; /* Button background color */
-        text-align: center; /* Center text in buttons */
-        width: 100%; /* Full width buttons */
-        font-size: 16px; /* Increased font size for buttons */
+        margin-bottom: 10px; /* Space between buttons */
+    }
+
+    .menu-section {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center items */
     }
 
     .menu-item {
-        flex-direction: column; /* Stack menu item elements vertically */
-        align-items: center; /* Center align menu items */
-        margin-bottom: 30px; /* Increased space below each menu item */
-        padding: 20px; /* Increased padding for menu items */
-        border: 1px solid #ccc; /* Light border for separation */
-        border-radius: 5px; /* Rounded corners */
         width: 100%; /* Full width for menu items */
+        margin-bottom: 20px; /* Space between items */
     }
 
-    .menu-item img {
-        display: none; /* Hide images on mobile devices */
+    .product-image {
+        width: 100%; /* Full width for product images */
+        max-width: 300px; /* Limit max width */
     }
 
-    .menu-details {
-        text-align: center; /* Center text in details */
-        margin-top: 15px; /* Increased space above details */
-        padding: 5px; /* Add padding for more space around details */
+    .product-details {
+        padding: 15px; /* Padding around product details */
+        text-align: center; /* Center text for better readability */
     }
 
-    h2 {
-        font-size: 26px; /* Increased heading size for better visibility */
-        text-align: center; /* Center headings */
-        margin-bottom: 10px; /* Increased space below headings */
-        padding: 5px; /* Padding for more space around titles */
-    }
-
-    .product-description {
-        margin-top: 5px; /* Space above description */
-        padding: 5px; /* Padding for more space around description */
-        line-height: 1.5; /* Increased line height for better readability */
-        font-size: 14px; /* Font size for better readability */
-    }
-
-    .explore {
-        text-align: center; /* Center the explore text */
-        margin-top: 25px; /* Increased space above explore section */
-    }
-
-    .explore-button {
-        margin-top: 15px; /* Increased space above explore button */
-        padding: 12px 20px; /* Increased padding for explore button */
-        background-color: #f0f0f0; /* Button background color */
-        border-radius: 5px; /* Rounded corners */
-        width: 100%; /* Full width for button */
-        text-align: center; /* Center text */
-        font-size: 16px; /* Increased font size for explore button */
+    .cart-button {
+        width: 100%; /* Full width for cart button */
+        margin-top: 10px; /* Space above button */
     }
 }
+
 
   </style>
 </head>
@@ -668,9 +624,10 @@
         </div>
   
         <div class="instruction-section">
-    <label class="instruction-label" for="instructions" onclick="toggleInstructions()">Order Special Instructions:</label>
-    <textarea id="instructions" style="display: none;"></textarea> <!-- Initially hidden -->
-</div>
+          <label class="instruction-label" for="instructions">Order Special Instructions:</label>
+          <textarea id="instructions" rows="4" placeholder="Type your special requests here..."></textarea>
+      </div>
+      
   
         <div class="checkout-section">
             <button onclick="proceedToCheckout()">Checkout</button>
