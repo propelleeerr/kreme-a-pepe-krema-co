@@ -451,53 +451,74 @@
     margin-top: 10px; /* Space between button and any following text */
 }
 
-@media (max-width: 768px) {
-    /* Hide images for smaller screens */
-    .menu-image {
-        display: none; /* Hides the image */
-    }
+ @media (max-width: 768px) {
+  /* Adjust header layout */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    /* Adjusting title and description styles */
-    .menu-title,
-    .menu-description {
-        margin: 0; /* Remove margins */
-        padding: 0; /* Remove padding */
-        font-size: 18px; /* Adjust font size as needed */
-        text-align: center; /* Center align the text */
-    }
+  .logo-container {
+    margin-bottom: 10px;
+  }
 
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons */
-        margin: 10px 0; /* Space above and below buttons */
-    }
+  .logo {
+    max-height: 70px; /* Slightly smaller logo for phones */
+  }
 
-    .add-to-cart {
-        width: 100%; /* Full width for the button */
-        padding: 12px; /* Adjust padding */
-        font-size: 16px; /* Larger font for better visibility */
-    }
+  .logo-text {
+    font-size: 20px; /* Slightly smaller text */
+    text-align: center;
+  }
 
-    .cart-drawer {
-        width: 100%; /* Full width for the cart drawer */
-        right: 0; /* Ensure it opens fully */
-    }
-}
+  /* Search container adjustments */
+  .search-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-@media (max-width: 480px) {
-    /* Further adjustments for very small screens */
-    .menu-title {
-        font-size: 16px; /* Adjust title size */
-    }
+  .search-container input[type="text"] {
+    width: 90%; /* Full width with padding */
+    font-size: 12px; /* Slightly smaller font */
+  }
 
-    .menu-description {
-        font-size: 14px; /* Adjust description size */
-    }
+  /* Button container styling */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to the next line if needed */
+    justify-content: center; /* Center align buttons */
+    gap: 10px; /* Add space between buttons */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Add spacing above buttons */
+  }
 
-    .add-to-cart {
-        padding: 10px; /* Smaller padding for smaller screens */
+  .button-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: bold;
+    margin: 5px 10px; /* Add margin around buttons */
+    text-align: center;
+  }
+
+  .button-container a:hover {
+    color: #494538; /* Keep the original hover effect */
+  }
+
+  .line {
+    display: none; /* Remove line for simplicity */
+  }
+
+  /* Heading adjustments */
+  .big-heading {
+    font-size: 32px; /* Smaller font size for headings */
+    text-align: center;
+    margin-left: 0; /* Center align heading */
+  }
+ }
     }
-}
 
 
   </style>
