@@ -273,38 +273,64 @@
    margin: 0 20px;
 }
 
-@media (max-width: 768px) {
-    /* Header Layout */
-    .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Align items to the center */
-        text-align: center; /* Center the header content */
-    }
+@media (max-width: 768px) {/* Adjust header layout */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .logo-container {
-        margin-bottom: 10px; /* Space below the logo */
-    }
+  .logo-container {
+    margin-bottom: 10px;
+  }
 
-    .search-container {
-        width: 80%; /* Reduced width for search bar */
-        margin-top: 10px; /* Add margin to separate from the logo */
-    }
+  .logo {
+    max-height: 70px; /* Slightly smaller logo for phones */
+  }
 
-    .search-container input[type="text"] {
-        width: 100%; /* Full width of the search input */
-    }
+  .logo-text {
+    font-size: 20px; /* Slightly smaller text */
+    text-align: center;
+  }
 
-    /* Button Container */
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center the buttons */
-        margin-top: 20px;
-    }
+  /* Search container adjustments */
+  .search-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-    .button-container a {
-        margin-bottom: 15px; /* Space between buttons */
-        text-align: center;
-    }
+  .search-container input[type="text"] {
+    width: 90%; /* Full width with padding */
+    font-size: 12px; /* Slightly smaller font */
+  }
+
+  /* Button container styling */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to the next line if needed */
+    justify-content: center; /* Center align buttons */
+    gap: 10px; /* Add space between buttons */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Add spacing above buttons */
+  }
+
+  .button-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: bold;
+    margin: 5px 10px; /* Add margin around buttons */
+    text-align: center;
+  }
+
+  .button-container a:hover {
+    color: #494538; /* Keep the original hover effect */
+  }
+
+  .line {
+    display: none; /* Remove line for simplicity */
+  }
 
     /* Big Heading */
     .big-heading {
