@@ -274,49 +274,107 @@
 }
 
 @media (max-width: 768px) {
+    /* Header adjustments for mobile */
     .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: column; /* Stack the header items vertically */
+        align-items: center; /* Center align the items */
+        text-align: center; /* Center text */
     }
 
+    /* Logo adjustments */
     .logo-container {
         margin-bottom: 10px; /* Space below the logo */
     }
 
+    .logo {
+        max-height: 80px; /* Reduce logo size */
+        margin-bottom: 10px; /* Space below the logo */
+    }
+
+    /* Search bar adjustments */
     .search-container {
-        width: 100%; /* Full width for the search bar */
+        width: 100%; /* Make the search bar take full width */
+        margin-bottom: 10px; /* Add space between search and buttons */
     }
 
     .search-container input[type="text"] {
-        width: 100%; /* Full width for better usability */
+        width: 100%; /* Full width for search input */
     }
 
+    .search-container button {
+        margin-left: 10px; /* Add space between the input field and button */
+    }
+
+    /* Button container adjustments */
     .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: flex-start; /* Align buttons to the start */
-        margin-left: 0; /* Reset margin */
+        flex-direction: column; /* Stack the buttons vertically */
+        align-items: center; /* Center the buttons */
+        margin-top: 20px; /* Add some space at the top */
     }
 
     .button-container a {
-        margin-bottom: 10px; /* Space between buttons */
+        margin-bottom: 10px; /* Add space between buttons */
     }
 
-    .big-heading {
-        font-size: 36px; /* Reduce font size for smaller screens */
-        margin-left: 0; /* Reset margin */
-        text-align: center; /* Center text */
+    .line {
+        display: none; /* Hide the line separator on small screens */
     }
 
-    .explore {
-        text-align: center; /* Center the explore text */
-        margin-left: 0; /* Reset margin */
+    /* About section adjustments */
+    .about-section h2 {
+        font-size: 24px; /* Adjust font size for small screens */
+        margin-bottom: 10px; /* Add space below heading */
     }
 
-    .explore-button {
-        margin-left: 0; /* Reset margin */
-        text-align: center; /* Center the button */
+    .about-section p {
+        font-size: 14px; /* Adjust text size */
+        margin: 0 20px; /* Adjust margin */
+    }
+
+    /* Mission section adjustments */
+    #mission h2 {
+        font-size: 24px; /* Adjust font size */
+        text-align: center; /* Center align the title */
+    }
+
+    #mission ol {
+        padding-left: 20px; /* Indent list items */
+    }
+
+    #mission li {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    /* Team section adjustments */
+    .team-container {
+        flex-direction: column; /* Stack the team members vertically */
+        align-items: center; /* Center align the team members */
+    }
+
+    .team-member {
+        width: 90%; /* Make team member cards take up more width */
+        margin-bottom: 20px; /* Space between team member cards */
+    }
+
+    .team-member img {
+        width: 80px; /* Adjust image size */
+        height: 80px; /* Adjust image size */
+    }
+
+    .team-member h3 {
+        font-size: 16px; /* Adjust font size for member name */
+    }
+
+    .team-member p {
+        font-size: 12px; /* Adjust font size for member info */
+    }
+
+    /* Adjust other sections (Optional) */
+    .mission-section p {
+        font-size: 14px; /* Adjust paragraph text size */
     }
 }
+
 
 
   </style>
