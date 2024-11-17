@@ -328,6 +328,9 @@ body {
   z-index: 900;
   display: none;
 }
+    .overlay.active {
+  display: block; /* Show overlay when drawer is open */
+}
 
 #totalAmount {
   font-weight: bold;
@@ -389,9 +392,18 @@ body {
   }
 
   .cart-drawer {
-    width: 100%;
-    right: -100%;
-  }
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hide the drawer initially off-screen */
+  width: 350px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
 
   .cart-item-image {
     width: 40px;
@@ -487,6 +499,17 @@ body {
     margin-left: 0; /* Center align heading */
   }
    }
+}
+
+    @media (max-width: 768px) {
+  .cart-drawer {
+    width: 100%; /* Use full screen width */
+    right: -100%; /* Hide the drawer off-screen by default */
+  }
+
+  .cart-drawer.open {
+    right: 0; /* Slide the drawer into view */
+  }
 }
 
 
