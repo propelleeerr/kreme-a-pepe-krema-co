@@ -200,47 +200,75 @@
     }
 
     @media (max-width: 768px) {
-    .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
+  /* Header adjustments */
+  .header {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: flex-start; /* Align items to the start */
+    text-align: center;
+  }
 
-    .logo-container {
-        margin-bottom: 10px; /* Space below the logo */
-    }
+  .logo-container {
+    flex-direction: column; /* Stack logo and text */
+    align-items: center; /* Center-align */
+    margin-bottom: 15px; /* Space between header and search */
+  }
 
-    .search-container {
-        width: 100%; /* Full width for the search bar */
-    }
+  .logo {
+    max-height: 70px; /* Adjust logo size */
+  }
 
-    .search-container input[type="text"] {
-        width: 100%; /* Full width for better usability */
-    }
+  .logo-text {
+    font-size: 20px; /* Smaller font for tagline */
+  }
 
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: flex-start; /* Align buttons to the start */
-        margin-left: 0; /* Reset margin */
-    }
+  /* Search bar adjustments */
+  .search-container {
+    width: 100%; /* Full width for the search bar */
+    margin-bottom: 10px; /* Space below search bar */
+  }
 
-    .button-container a {
-        margin-bottom: 10px; /* Space between buttons */
-    }
+  .search-container input[type="text"] {
+    width: 100%; /* Full width */
+    font-size: 12px; /* Smaller font size */
+  }
 
-    .big-heading {
-        font-size: 36px; /* Reduce font size for smaller screens */
-        margin-left: 0; /* Reset margin */
-        text-align: center; /* Center text */
-    }
+  .search-container button i {
+    font-size: 14px; /* Smaller icon */
+  }
 
-    .explore {
-        text-align: center; /* Center the explore text */
-        margin-left: 0; /* Reset margin */
-    }
+  /* Navigation buttons */
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align to start */
+    margin-left: 0; /* Reset margin */
+  }
 
-    .explore-button {
-        margin-left: 0; /* Reset margin */
-    }
+  .button-container a {
+    margin-bottom: 10px; /* Space between buttons */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .line {
+    display: none; /* Hide the horizontal line for simplicity */
+  }
+
+  /* Heading and explore section */
+  .big-heading {
+    font-size: 32px; /* Smaller font for the heading */
+    text-align: center; /* Center-align heading */
+    margin-left: 0; /* Reset margin */
+  }
+
+  .explore {
+    font-size: 14px; /* Adjust font size */
+    text-align: center; /* Center-align text */
+    margin-left: 0; /* Reset margin */
+  }
+
+  .explore-button {
+    margin: 15px auto; /* Center button */
+    padding: 8px 16px; /* Adjust padding */
+  }
 }
 
   </style>
