@@ -403,6 +403,31 @@ body {
   }
 }
 
+    @media only screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu img {
+    width: 100%; /* Ensures the image takes up the full width on small screens */
+    height: auto; /* Maintains the image's aspect ratio */
+    max-width: 100%; /* Prevents the image from being too large */
+    margin-bottom: 15px; /* Adds spacing between the image and product details */
+  }
+
+  .menu-item-details {
+    width: 100%; /* Ensures the details section takes up the full width */
+    padding: 10px; /* Adds some padding around the text */
+  }
+
+  .menu-item-name,
+  .menu-item-description,
+  .menu-item-options,
+  .menu-item-add-to-cart {
+    text-align: center; /* Centers the text on small screens for better readability */
+  }
+}
+
 /* Adjustments for smaller devices */
 @media (max-width: 480px) {
    @media (max-width: 768px) {
@@ -471,31 +496,6 @@ body {
     text-align: center;
     margin-left: 0; /* Center align heading */
   }
-
-  .menu {
-    flex-direction: column;
-  }
-
-  .menu img {
-    width: 100%; /* Ensures the image takes up the full width on small screens */
-    height: auto; /* Maintains the image's aspect ratio */
-    max-width: 100%; /* Prevents the image from being too large */
-    margin-bottom: 15px; /* Adds spacing between the image and product details */
-  }
-
-  .menu-item-details {
-    width: 100%; /* Ensures the details section takes up the full width */
-    padding: 10px; /* Adds some padding around the text */
-  }
-
-  .menu-item-name,
-  .menu-item-description,
-  .menu-item-options,
-  .menu-item-add-to-cart {
-    text-align: center; /* Centers the text on small screens for better readability */
-  }
-}
-
    }
 }
 
