@@ -450,17 +450,25 @@
 .checkout-section button + p {
     margin-top: 10px; /* Space between button and any following text */
 }
-    .product-container {
+.product-container {
   display: flex;
   justify-content: space-between;
+  gap: 30px; /* Adds space between the image and info */
+  margin-bottom: 30px; /* Adds some space below the product container */
 }
 
+/* Product image and info */
 .product-image {
   flex: 1;
+  margin-right: 20px; /* Adds space between the image and the info */
 }
 
 .product-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px; /* Adds space between the info sections */
 }
 
  @media (max-width: 768px) {
@@ -530,24 +538,36 @@
     margin-left: 0; /* Center align heading */
   }
 
- .product-container {
-    flex-direction: column; /* Change to single column layout */
-    align-items: center; /* Center content */
+.product-container {
+    flex-direction: column; /* Switch to single column layout */
+    align-items: center; /* Center the content */
+    gap: 20px; /* Reduce the gap between image and info */
+    padding: 20px; /* Adds padding around the container */
   }
 
   .product-image,
   .product-info {
-    width: 100%; /* Ensure both take full width */
-    text-align: center; /* Center text for the info section */
+    width: 100%; /* Both elements take full width */
+    text-align: center; /* Center align text in the info section */
   }
 
-  /* For cart drawer on smaller screens */
+  .product-image img {
+    width: 100%; /* Ensure the image scales with the container */
+    height: auto; /* Keep the image aspect ratio */
+  }
+
+  .product-info {
+    margin-top: 20px; /* Adds some space between image and info */
+  }
+
+  /* Cart Drawer Styling on smaller screens */
   .cart-drawer {
-    position: relative; /* Ensure it's part of the page flow */
-    width: 100%; /* Full width */
-    top: auto; /* Remove the floating effect */
-    left: 0; /* Align it to the left */
-    transform: none; /* Remove hover effect */
+    position: relative; /* Normal positioning */
+    width: 100%; /* Full width of the page */
+    left: 0;
+    top: 0; /* Aligns cart at the top */
+    transform: none; /* Removes hover effect */
+    margin-top: 20px; /* Adds space at the top */
   }
 }
     }
