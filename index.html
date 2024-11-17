@@ -201,74 +201,84 @@
    @media (max-width: 768px) {
   /* Header adjustments */
   .header {
-    flex-direction: column; /* Stack header elements vertically */
-    align-items: flex-start; /* Align items to the start */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .logo-container {
-    flex-direction: column; /* Stack logo and text */
-    align-items: center; /* Center-align */
-    margin-bottom: 15px; /* Space between header and search */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
   }
 
   .logo {
-    max-height: 70px; /* Adjust logo size */
+    max-height: 70px;
   }
 
   .logo-text {
-    font-size: 20px; /* Smaller font for tagline */
+    font-size: 20px;
   }
 
   /* Search bar adjustments */
   .search-container {
-    width: 100%; /* Full width for the search bar */
-    margin-bottom: 10px; /* Space below search bar */
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
   .search-container input[type="text"] {
-    width: 100%; /* Full width */
-    font-size: 12px; /* Smaller font size */
+    width: 90%; /* Slight padding for a centered look */
+    font-size: 12px;
   }
 
-  .search-container button i {
-    font-size: 14px; /* Smaller icon */
-  }
-
-  /* Navigation buttons */
+  /* Navigation buttons: Grid layout */
   .button-container {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-start; /* Align to start */
-    margin-left: 0; /* Reset margin */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
+    gap: 10px; /* Space between buttons */
+    justify-items: center; /* Center buttons horizontally */
+    margin-left: 0;
   }
 
   .button-container a {
-    margin-bottom: 10px; /* Space between buttons */
-    font-size: 14px; /* Smaller font size */
+    text-align: center; /* Center-align button text */
+    font-size: 14px;
+    padding: 8px 10px; /* Add padding for a button-like appearance */
+    border: 1px solid #605b4a; /* Optional: Add border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .button-container a:hover {
+    background-color: #605b4a;
+    color: #fff; /* Change text color on hover */
   }
 
   .line {
-    display: none; /* Hide the horizontal line for simplicity */
+    display: none;
   }
 
   /* Heading and explore section */
   .big-heading {
-    font-size: 32px; /* Smaller font for the heading */
-    text-align: center; /* Center-align heading */
-    margin-left: 0; /* Reset margin */
+    font-size: 32px;
+    text-align: center;
+    margin-left: 0;
   }
 
   .explore {
-    font-size: 14px; /* Adjust font size */
-    text-align: center; /* Center-align text */
-    margin-left: 0; /* Reset margin */
+    font-size: 14px;
+    text-align: center;
+    margin-left: 0;
   }
 
   .explore-button {
-    margin: 15px auto; /* Center button */
-    padding: 8px 16px; /* Adjust padding */
+    margin: 15px auto;
+    padding: 8px 16px;
   }
 }
+
 
 
   </style>
