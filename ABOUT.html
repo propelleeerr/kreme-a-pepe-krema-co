@@ -277,7 +277,8 @@
     /* Header Layout */
     .header {
         flex-direction: column; /* Stack header elements vertically */
-        align-items: flex-start; /* Align items to the start */
+        align-items: center; /* Align items to the center */
+        text-align: center; /* Center the header content */
     }
 
     .logo-container {
@@ -285,91 +286,101 @@
     }
 
     .search-container {
-        width: 100%; /* Full width for the search bar */
+        width: 80%; /* Reduced width for search bar */
         margin-top: 10px; /* Add margin to separate from the logo */
     }
 
     .search-container input[type="text"] {
-        width: 100%; /* Full width for better usability */
+        width: 100%; /* Full width of the search input */
     }
 
     /* Button Container */
     .button-container {
         flex-direction: column; /* Stack buttons vertically */
-        align-items: flex-start; /* Align buttons to the start */
-        margin-left: 0; /* Reset margin */
-        margin-top: 20px; /* Add margin on top */
+        align-items: center; /* Center the buttons */
+        margin-top: 20px;
     }
 
     .button-container a {
-        margin-bottom: 10px; /* Space between buttons */
+        margin-bottom: 15px; /* Space between buttons */
+        text-align: center;
     }
 
+    /* Big Heading */
     .big-heading {
-        font-size: 36px; /* Reduce font size for smaller screens */
-        margin-left: 0; /* Reset margin */
-        text-align: center; /* Center text */
+        font-size: 30px; /* Reduce font size */
+        text-align: center; /* Center the heading */
+        margin-left: 0; /* Remove left margin */
     }
 
+    /* Explore Section */
     .explore {
-        text-align: center; /* Center the explore text */
-        margin-left: 0; /* Reset margin */
+        text-align: center; /* Center align the text */
     }
 
     .explore-button {
-        margin-left: 0; /* Reset margin */
-        text-align: center; /* Center the button */
+        display: block;
+        margin: 20px auto; /* Center button and add space */
     }
 
     /* About Section */
     .about-section h2 {
-        font-size: 24px; /* Smaller heading size for mobile */
+        font-size: 24px; /* Slightly smaller font size */
+        text-align: center; /* Center the section title */
     }
 
     .about-section p {
-        font-size: 14px; /* Reduce font size for better readability */
-        margin: 0 10px; /* Add some margin for better spacing */
+        font-size: 14px; /* Smaller font size for readability */
+        margin: 0 20px; /* Add margins for better spacing */
+        text-align: center; /* Center the paragraph */
     }
 
     /* Mission Section */
     #mission h2 {
-        font-size: 24px; /* Smaller heading for mobile */
+        font-size: 24px; /* Smaller heading */
+        text-align: center; /* Center the heading */
     }
 
     #mission ol {
-        padding-left: 20px; /* Indent the list */
+        padding-left: 20px; /* Indentation for list */
+        margin: 0 auto; /* Center the list */
+        text-align: left; /* Align text left for readability */
     }
 
     #mission li {
-        font-size: 14px; /* Smaller font size */
-        margin-bottom: 10px; /* Add space between list items */
+        font-size: 14px;
+        margin-bottom: 12px; /* Space between list items */
     }
 
     /* Team Section */
     .team-container {
         flex-direction: column; /* Stack team members vertically */
-        align-items: center; /* Center align team members */
+        align-items: center; /* Center the team members */
+        text-align: center; /* Center-align the content */
     }
 
     .team-member {
-        width: 100%; /* Full width on mobile */
-        margin-bottom: 20px; /* Space between team members */
+        margin-bottom: 30px; /* Space below each team member */
+        width: 80%; /* Adjust width for mobile */
+        max-width: 300px; /* Max width to ensure it doesn't stretch too wide */
+        text-align: center; /* Center the text */
     }
 
     .team-member img {
         width: 80px; /* Smaller image size */
         height: 80px;
+        border-radius: 50%; /* Circular images */
     }
 
     .team-member h3 {
-        font-size: 16px; /* Smaller name font size */
+        font-size: 16px; /* Adjust size for mobile */
+        margin-top: 10px; /* Space between image and name */
     }
 
     .team-member p {
-        font-size: 12px; /* Smaller text for position */
+        font-size: 14px; /* Adjust size for readability */
     }
 }
-
 
   </style>
 </head>
