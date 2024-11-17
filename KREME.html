@@ -450,6 +450,18 @@
 .checkout-section button + p {
     margin-top: 10px; /* Space between button and any following text */
 }
+    .product-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-info {
+  flex: 1;
+}
 
  @media (max-width: 768px) {
   /* Adjust header layout */
@@ -518,49 +530,25 @@
     margin-left: 0; /* Center align heading */
   }
 
-      /* Change the layout of the image and info to stack vertically */
-    .product-container {
-        display: block; /* Stack the children vertically */
-        text-align: center; /* Center-align the content for a neat look */
-    }
+ .product-container {
+    flex-direction: column; /* Change to single column layout */
+    align-items: center; /* Center content */
+  }
 
-    .product-container img {
-        width: 100%; /* Ensure the image takes up full width */
-        margin-bottom: 20px; /* Add spacing between image and info */
-    }
+  .product-image,
+  .product-info {
+    width: 100%; /* Ensure both take full width */
+    text-align: center; /* Center text for the info section */
+  }
 
-    .product-info {
-        display: block;
-        width: 100%; /* Make the info take full width below the image */
-        text-align: center; /* Center-align the text for a consistent look */
-    }
-
-    /* Adjust the cart drawer */
-    .cart-drawer {
-        position: fixed; /* Ensure it’s fixed to the side */
-        top: 0;
-        right: 0;
-        width: 25%; /* Set the width */
-        height: 100%; /* Make it full height */
-        background-color: #fff; /* Make it have a white background */
-        box-shadow: -4px 0px 10px rgba(0,0,0,0.1); /* Add a shadow for contrast */
-        overflow-y: auto; /* Make it scrollable if the content overflows */
-    }
-
-    .cart-drawer .cart-header {
-        text-align: center; /* Center-align the title */
-        padding: 10px;
-        background-color: #f8f8f8; /* A soft background color */
-    }
-
-    .cart-drawer .cart-items {
-        margin: 20px;
-    }
-    
-    /* Make sure the page content is not scrollable when the cart drawer is open */
-    body.cart-drawer-open {
-        overflow: hidden;
-    }
+  /* For cart drawer on smaller screens */
+  .cart-drawer {
+    position: relative; /* Ensure it's part of the page flow */
+    width: 100%; /* Full width */
+    top: auto; /* Remove the floating effect */
+    left: 0; /* Align it to the left */
+    transform: none; /* Remove hover effect */
+  }
 }
     }
   </style>
