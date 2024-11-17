@@ -198,8 +198,8 @@
       color: #684e4e;
     }
 
-   @media (max-width: 768px) {
-  /* Header adjustments */
+ @media (max-width: 768px) {
+  /* Adjust header layout */
   .header {
     flex-direction: column;
     align-items: center;
@@ -207,79 +207,74 @@
   }
 
   .logo-container {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .logo {
-    max-height: 70px;
+    max-height: 70px; /* Slightly smaller logo for phones */
   }
 
   .logo-text {
-    font-size: 20px;
+    font-size: 20px; /* Slightly smaller text */
+    text-align: center;
   }
 
-  /* Search bar adjustments */
+  /* Search container adjustments */
   .search-container {
     width: 100%;
-    margin-bottom: 10px;
     text-align: center;
+    margin-bottom: 15px;
   }
 
   .search-container input[type="text"] {
-    width: 90%; /* Slight padding for a centered look */
-    font-size: 12px;
+    width: 90%; /* Full width with padding */
+    font-size: 12px; /* Slightly smaller font */
   }
 
-  /* Navigation buttons: Grid layout */
+  /* Button container styling */
   .button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
-    gap: 10px; /* Space between buttons */
-    justify-items: center; /* Center buttons horizontally */
-    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to the next line if needed */
+    justify-content: center; /* Center align buttons */
+    gap: 10px; /* Add space between buttons */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Add spacing above buttons */
   }
 
   .button-container a {
-    text-align: center; /* Center-align button text */
-    font-size: 14px;
-    padding: 8px 10px; /* Add padding for a button-like appearance */
-    border: 1px solid #605b4a; /* Optional: Add border */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    color: black;
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: bold;
+    margin: 5px 10px; /* Add margin around buttons */
+    text-align: center;
   }
 
   .button-container a:hover {
-    background-color: #605b4a;
-    color: #fff; /* Change text color on hover */
+    color: #494538; /* Keep the original hover effect */
   }
 
   .line {
-    display: none;
+    display: none; /* Remove line for simplicity */
   }
 
-  /* Heading and explore section */
+  /* Heading adjustments */
   .big-heading {
-    font-size: 32px;
+    font-size: 32px; /* Smaller font size for headings */
     text-align: center;
-    margin-left: 0;
+    margin-left: 0; /* Center align heading */
   }
 
   .explore {
-    font-size: 14px;
-    text-align: center;
+    font-size: 14px; /* Adjust font size for readability */
+    text-align: center; /* Center align text */
     margin-left: 0;
   }
 
   .explore-button {
     margin: 15px auto;
-    padding: 8px 16px;
   }
 }
-
-
 
   </style>
 </head>
