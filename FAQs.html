@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -177,48 +177,74 @@
       margin-top: 5px; /* Add top margin for additional spacing */
     }
 
-    @media (max-width: 768px) {
-      .header {
-          flex-direction: column; /* Stack header elements vertically */
-          align-items: flex-start; /* Align items to the start */
-      }
+@media (max-width: 768px) {/* Adjust header layout */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-      .logo-container {
-          margin-bottom: 10px; /* Space below the logo */
-      }
+  .logo-container {
+    margin-bottom: 10px;
+  }
 
-      .search-container {
-          width: 100%; /* Full width for the search bar */
-      }
+  .logo {
+    max-height: 70px; /* Slightly smaller logo for phones */
+  }
 
-      .search-container input[type="text"] {
-          width: 100%; /* Full width for better usability */
-      }
+  .logo-text {
+    font-size: 20px; /* Slightly smaller text */
+    text-align: center;
+  }
 
-      .button-container {
-          flex-direction: column; /* Stack buttons vertically */
-          align-items: flex-start; /* Align buttons to the start */
-          margin-left: 0; /* Reset margin */
-      }
+  /* Search container adjustments */
+  .search-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-      .button-container a {
-          margin-bottom: 10px; /* Space between buttons */
-      }
+  .search-container input[type="text"] {
+    width: 90%; /* Full width with padding */
+    font-size: 12px; /* Slightly smaller font */
+  }
 
-      .big-heading {
-          font-size: 36px; /* Reduce font size for smaller screens */
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center text */
-      }
+  /* Button container styling */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to the next line if needed */
+    justify-content: center; /* Center align buttons */
+    gap: 10px; /* Add space between buttons */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px; /* Add spacing above buttons */
+  }
 
-      .explore {
-          text-align: center; /* Center the explore text */
-          margin-left: 0; /* Reset margin */
-      }
+  .button-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: bold;
+    margin: 5px 10px; /* Add margin around buttons */
+    text-align: center;
+  }
 
-      .explore-button {
-          margin-left: 0; /* Reset margin */
-          text-align: center; /* Center the button */
+  .button-container a:hover {
+    color: #494538; /* Keep the original hover effect */
+  }
+
+  .line {
+    display: none; /* Remove line for simplicity */
+  }
+
+    /* Big Heading */
+    .big-heading {
+        font-size: 30px; /* Reduce font size */
+        text-align: center; /* Center the heading */
+        margin-left: 0; /* Remove left margin */
+    }
+
+  .answers-content {
+    text-align: justified;
       }
     }
   </style>
