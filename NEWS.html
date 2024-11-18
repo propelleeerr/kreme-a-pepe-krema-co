@@ -329,64 +329,86 @@
     font-size: 20px;
   }
 
+/* Default Styling (Larger Screens) */
+.note-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 80%;
+  max-width: 550px;
+  height: 500px;
+  overflow-y: auto;
+}
+
+/* Medium Screens (Tablets: 768px and below) */
+@media (max-width: 768px) {
   .note-container {
-    width: 95%;
-    height: 90%; /* Fit better on smaller screens */
+    width: 90%; /* Use more screen width */
+    max-width: 450px; /* Limit the width slightly */
+    height: 400px; /* Reduce height */
   }
 
   #noteImage {
-    max-width: 90%;
+    width: 100%; /* Scale image to fit container */
+    max-width: 400px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
   }
-  /* Default: Larger Screens (3 columns) */
-.news-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px;
+
+  #noteTitle {
+    font-size: 18px; /* Slightly smaller title font size */
+    padding: 8px 0; /* Adjust padding */
+  }
+
+  #noteDescription {
+    font-size: 14px; /* Smaller text */
+    line-height: 1.4; /* Tighter line spacing */
+  }
+
+  #extraInfo {
+    font-size: 13px; /* Compact font size for additional info */
+  }
 }
 
-/* Medium Screens (Tablets: 768px and below - 2 columns) */
-@media (max-width: 768px) {
-  .news-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 15px; /* Adjust gap */
-  }
-
-  .news-item {
-    padding: 10px;
-  }
-
-  .news-item img {
-    max-height: 300px; /* Reduce image height */
-  }
-
+/* Small Screens (Phones: 480px and below) */
 @media (max-width: 480px) {
-  .news-container {
-    grid-template-columns: 1fr; /* Single column */
-    gap: 10px; /* Narrower gap */
+  .note-container {
+    width: 95%; /* Maximize screen width */
+    height: auto; /* Let the height adjust dynamically */
+    padding: 15px; /* Reduce padding */
   }
 
-  .news-item {
-    padding: 8px;
+  #noteImage {
+    width: 100%; /* Full width */
+    max-width: none; /* No max-width for smaller screens */
+    height: auto; /* Keep aspect ratio */
+    margin-bottom: 10px; /* Add space below image */
   }
 
-  .news-item img {
-    max-height: 200px; /* Further reduce image height */
+  #noteTitle {
+    font-size: 16px; /* Smaller title */
+    text-align: center; /* Keep centered */
   }
 
-  .news-title {
-    font-size: 16px; /* Adjust font size for better readability */
+  #noteDescription {
+    font-size: 13px; /* Compact text */
+    line-height: 1.4;
+    text-align: justify; /* Better readability */
   }
 
-  .news-date {
-    font-size: 12px;
+  #extraInfo {
+    font-size: 12px; /* Compact additional info */
   }
 
-  .news-item p {
-    font-size: 14px;
-    line-height: 1.5;
+  .close-button {
+    font-size: 1.2em; /* Smaller close button */
   }
-}
-
 }
 
   </style>
