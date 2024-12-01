@@ -170,16 +170,30 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
-/* Optional: Responsive adjustments */
 @media (max-width: 768px) {
   .image-container {
-    height: 200px; /* Further reduced height for smaller screens */
-    width: 90%; /* Increased width slightly on smaller screens */
-    max-width: 500px; /* Limits the width further on smaller screens */
-    margin-right: 15px; /* Adjusted margin for smaller screens */
-    padding-right: 5px; /* Adjusted padding for smaller screens */
+    width: 90%; /* Reduced width for better scaling */
+    max-width: 400px; /* Set a max-width to limit how large the image can get */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    overflow: hidden; /* Hide any overflow if the image doesn't perfectly fit */
+    position: relative; /* Helps position the image correctly */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+  }
+
+  .image-container img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image covers the container fully */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    object-position: center; /* Ensures the image is centered within the container */
+    display: block; /* Prevents any unwanted space around the image */
+    margin-left: 18px;
   }
 }
+
+
 
 
 .menu-image {
