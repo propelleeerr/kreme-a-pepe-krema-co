@@ -185,7 +185,7 @@
     }
 
     .slider-container {
-  position: absolute;  /* Fix the position relative to the viewport */
+  position: relative;  /* Fix the position relative to the viewport */
   top: 210px;       /* Distance from the top of the screen */
   right: 120px;      /* Distance from the right side */
   width: 290px;
@@ -198,6 +198,9 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;  /* Ensure the container stays on top of other content */
+      display: flex;
+      overflow: hidden;
+      margin: 0 auto;
 }
 
 .image-slider {
@@ -246,11 +249,23 @@
         margin: 15px auto;
       }
 
-      .image-slider {
-        position: static;
-        margin-top: 100px;
-        text-align: center;
-      }
+      @media (max-width: 768px) {
+  .slider-container {
+    width: 90%; /* Takes up more of the screen width on smaller devices */
+    max-width: 500px; /* Limits width further */
+    margin-top: 30px; /* Adds some space above on mobile */
+  }
+
+  .image-slider {
+    margin-top: 30px;
+    text-align: center; /* Centers the images */
+  }
+
+  .image-slider img {
+    width: 100%; /* Ensures responsiveness on small devices */
+    height: auto; /* Ensures the aspect ratio is preserved */
+  }
+}
     }
   </style>
 </head>
