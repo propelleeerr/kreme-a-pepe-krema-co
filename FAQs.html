@@ -1,4 +1,4 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,7 +178,7 @@
       text-align: justify;
     }
 
-@media (max-width: 768px) {/* Adjust header layout */
+    @media (max-width: 768px) {/* Adjust header layout */
   .header {
     flex-direction: column;
     align-items: center;
@@ -244,21 +244,25 @@
         margin-left: 0; /* Remove left margin */
     }
 
-  .answers-content {
-    text-align: justify;
-      }
+    /* Explore Section */
+    .explore {
+        text-align: center; /* Center align the text */
     }
+
+    .explore-button {
+        display: block;
+        margin: 20px auto; /* Center button and add space */
+    }
+  }
+
   </style>
 </head>
 <body>
   <div class="header">
-    <!-- Logo and text container -->
     <div class="logo-container">
       <img src="pictures/LOGO.png" alt="KREME-A-PEPE-LOGO" class="logo" />
       <span class="logo-text">Where every bite is worth every peso!</span>
     </div>
-
-    <!-- Search bar -->
     <div class="search-container">
       <input type="text" placeholder="Search..." />
       <button>
@@ -269,8 +273,6 @@
       </a>
     </div>
   </div>
-
-  <!-- Buttons and line -->
   <div class="button-container">
     <a href="index.html" class="home-button">
       <i class="fas fa-home"></i> Home
