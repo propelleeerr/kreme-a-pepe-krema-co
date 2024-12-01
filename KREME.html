@@ -147,24 +147,56 @@ body {
   background-color: transparent;
 }
 
-/* Adjustments for Menu Image */
+.image-container {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  overflow: hidden; /* Prevents overflow */
+  height: 360px; /* Height as before */
+  width: 70%; /* Reduced width to 80% of the container's parent */
+  max-width: 600px; /* Limits the width to a maximum of 600px */
+  margin-top: 40px; /* Adjusted margin for a balanced look */
+  margin-right: 20px; /* Increased right margin to create space on the right side */
+  margin-left: 10px;
+  padding-right: 10px; /* Added padding on the right for extra space inside */
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  border: none; /* No border */
+  transition: box-shadow 0.3s ease; /* Smooth transition effect */
+}
+
+.image-container:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .image-container {
+    height: 200px; /* Further reduced height for smaller screens */
+    width: 90%; /* Increased width slightly on smaller screens */
+    max-width: 500px; /* Limits the width further on smaller screens */
+    margin-right: 15px; /* Adjusted margin for smaller screens */
+    padding-right: 5px; /* Adjusted padding for smaller screens */
+  }
+}
+
+
 .menu-image {
-  flex: 1;
-  max-width: 50%;
-  margin-right: 15px;
-  position: relative;
-  height: 400px; /* Adjusted for smaller screen */
+  max-width: 100%;
+  height: auto;
   overflow: hidden;
-  margin-top: 40px;
+  align-items: center;
 }
 
 .menu img {
   width: 100%;
+  align-items: center;
   height: auto;
-  max-width: 100%;
-  margin-bottom: 15px;
   object-fit: cover; /* Ensures the image maintains aspect ratio */
+  margin-bottom: 15px;
 }
+
 
 
 .menu-info {
@@ -554,10 +586,13 @@ body {
     </div>
   
     <div class="menu-section">
-      <div class="menu-item">
-        <div class="menu-image">
-          <img src="pictures/LOGO.png" alt="Product Image">
-        </div>
+  <div class="menu-item">
+    <!-- Container for the image -->
+    <div class="image-container">
+      <div class="menu-image">
+        <img src="pictures/KAP.png" alt="Product Image">
+      </div>
+    </div>
         <div class="menu-info">
           <div class="menu-title">Kreme-a-Pepe</div>
           <div class="menu-description">Kreme-a-Pepe takes the shape of the Philippines' piso coin, featuring the face of Jose Rizal, highlighting its goal of promoting Filipino culture. The delicious, coin-shaped treats can be purchased individually, making them an ideal choice for a quick snack on the go. For those who prefer to share or are looking for a simple gift or pasalubong, we also offer bundles, which include 3 pieces.</div>
@@ -572,9 +607,9 @@ body {
               <label for="flavor">Choose Flavor:</label>
               <select id="flavor" onchange="updatePrice()">
                   <option value="" disabled selected>Choose Flavor</option>
-                  <option value="Leche Flan" data-price="27.65">Leche Flan - ₱27.65</option>
-                  <option value="Ube" data-price="35.00">Ube - ₱26.48</option>
-                  <option value="Condensed Milk" data-price="28.50">Condensed Milk - ₱22.32</option>
+                  <option value="Leche Flan" data-price="30.00">Leche Flan - ₱30.00</option>
+                  <option value="Ube" data-price="30.00">Ube - ₱30.00</option>
+                  <option value="Condensed Milk" data-price="30.00">Condensed Milk - ₱30.00</option>
               </select>
           </div>
           
