@@ -310,16 +310,16 @@
       overflow: hidden;
     }
     
- @media (max-width: 768px) {
-  /* Adjust header layout */
-    .header {
+    @media (max-width: 768px) {
+  /* Header Layout */
+  .header {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
   .news-header {
-      font-size: 36px; /* Ensure the font size remains consistent */
+    font-size: 36px; /* Ensure font size remains consistent */
   }
 
   .logo-container {
@@ -335,7 +335,7 @@
     text-align: center;
   }
 
-  /* Search container adjustments */
+  /* Search Container */
   .search-container {
     width: 100%;
     text-align: center;
@@ -347,13 +347,12 @@
     font-size: 12px; /* Slightly smaller font */
   }
 
-  /* Button container styling */
+  /* Button Container */
   .button-container {
     display: flex;
-    flex-wrap: wrap; /* Wrap buttons to the next line if needed */
-    justify-content: center; /* Center align buttons */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px; /* Add space between buttons */
-    margin-left: 0; /* Remove left margin */
     margin-top: 20px; /* Add spacing above buttons */
   }
 
@@ -362,7 +361,7 @@
     color: black;
     font-size: 14px; /* Slightly smaller font size */
     font-weight: bold;
-    margin: 5px 10px; /* Add margin around buttons */
+    margin: 5px 10px;
     text-align: center;
   }
 
@@ -370,17 +369,8 @@
     color: #494538; /* Keep the original hover effect */
   }
 
-  .line {
-    display: none; /* Remove line for simplicity */
-  }
-
-  /* Heading adjustments */
-  .big-heading {
-    font-size: 32px; /* Smaller font size for headings */
-    text-align: center;
-    margin-left: 0; /* Center align heading */
-  }
-    .news-container {
+  /* News Section */
+  .news-container {
     grid-template-columns: 1fr; /* Single column for news items */
     gap: 10px;
   }
@@ -389,63 +379,26 @@
     max-height: 250px;
   }
 
-  .button-container a {
-    font-size: 12px;
-    margin: 5px;
-  }
-
   .section-header {
     font-size: 20px;
   }
 
-/* Default Styling (Larger Screens) */
-.note-container {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 80%;
-  max-width: 550px;
-  height: 500px;
-  overflow-y: auto;
-}
-
+  /* Note Container */
   .note-container {
-    width: 90%; /* Use more screen width */
-    max-width: 450px; /* Limit the width slightly */
-    height: 400px; /* Reduce height */
-  }
-
-  #noteImage {
-    width: 100%; /* Scale image to fit container */
-    max-width: 400px; /* Set a maximum width */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  #noteTitle {
-    font-size: 18px; /* Slightly smaller title font size */
-    padding: 8px 0; /* Adjust padding */
-  }
-
-  #noteDescription {
-    font-size: 14px; /* Smaller text */
-    line-height: 1.4; /* Tighter line spacing */
-  }
-
-  #extraInfo {
-    font-size: 13px; /* Compact font size for additional info */
-  }
-   
-  .note-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
     width: 95%; /* Maximize screen width */
-    height: auto; /* Let the height adjust dynamically */
-    padding: 15px; /* Reduce padding */
+    max-width: 450px; /* Limit the width */
+    height: auto; /* Dynamic height */
+    overflow-y: auto;
   }
 
   #noteImage {
@@ -457,7 +410,7 @@
 
   #noteTitle {
     font-size: 16px; /* Smaller title */
-    text-align: center; /* Keep centered */
+    text-align: center;
   }
 
   #noteDescription {
@@ -473,13 +426,17 @@
   .close-button {
     font-size: 1.2em; /* Smaller close button */
   }
+
+  .line {
+    display: none; /* Remove line for simplicity */
+  }
+  
 }
-    
 
   </style>
 </head>
 <body>
-   <div class="header">
+  <div class="header">
     <!-- Logo and text container -->
     <div class="logo-container">
       <img src="pictures/LOGO.png" alt="KREME-A-PEPE-LOGO" class="logo" />
@@ -510,6 +467,7 @@
     <a href="FAQs.html">FAQs</a>
     <div class="line"></div>
   </div>
+
   
   <h2 class="section-header" id="LatestNews">Latest News</h2>
 
